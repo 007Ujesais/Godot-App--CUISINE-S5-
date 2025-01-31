@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmm3cd6ymtfjm"]
+
+[ext_resource type="Material" uid="uid://d23mm0aj88n02" path="res://materials/floor_material.tres" id="1_w33s1"]
+[ext_resource type="Material" uid="uid://bn0nf5oh3ywh4" path="res://materials/wall_material.tres" id="2_m01uf"]
+[ext_resource type="Script" path="res://scripts/world/auto_hider.gd" id="3_8itgw"]
+[ext_resource type="PackedScene" uid="uid://cpd0nbs8o8ipt" path="res://scenes/player/player.tscn" id="3_bs0p0"]
+[ext_resource type="PackedScene" uid="uid://c6qy7wyqfwix" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_18m6p"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_5rame"]
+sky_material = SubResource("ProceduralSkyMaterial_18m6p")
+process_mode = 2
+
+[sub_resource type="Environment" id="Environment_fsndb"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_5rame")
+tonemap_mode = 2
+glow_strength = 0.07
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_emission = Color(0.8, 0.952941, 1, 1)
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fsndb")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="Map"]
+material_override = ExtResource("1_w33s1")
+use_collision = true
+size = Vector3(194.828, 1, 172.883)
+
+[node name="wall" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50168, 1.9912, 0)
+layers = 2
+material_override = ExtResource("2_m01uf")
+use_collision = true
+size = Vector3(1, 3, 10)
+
+[node name="wall2" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49832, 1.9912, 0)
+material_override = ExtResource("2_m01uf")
+use_collision = true
+size = Vector3(1, 3, 10)
+
+[node name="wall3" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.00431018, 1.9912, 4.50867)
+layers = 2
+material_override = ExtResource("2_m01uf")
+use_collision = true
+size = Vector3(1, 3, 7.99298)
+
+[node name="wall5" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, -1, -0.0284708, 1.9912, 2.71339)
+layers = 2
+material_override = ExtResource("2_m01uf")
+use_collision = true
+size = Vector3(0.252458, 2.99136, 2.64676)
+script = ExtResource("3_8itgw")
+
+[node name="wall6" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00431005, 1.9912, -2.34905)
+layers = 2
+material_override = ExtResource("2_m01uf")
+use_collision = true
+size = Vector3(0.208267, 2.9845, 4)
+script = ExtResource("3_8itgw")
+
+[node name="wall4" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.00431058, 1.9912, -4.49133)
+material_override = ExtResource("2_m01uf")
+use_collision = true
+size = Vector3(1, 3, 7.99298)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
+transform = Transform3D(0.866025, 0.433013, 0.25, -0.12941, -0.288849, 0.948588, 0.482963, -0.853854, -0.194114, 0, 6.80994, 2.85039)
+shadow_enabled = true
+shadow_normal_bias = 1.524
+
+[node name="player" parent="." instance=ExtResource("3_bs0p0")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.480278, 0)
+
+[node name="camera_rig" parent="." instance=ExtResource("4_wc57n")]
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0, 0)
