@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/world/auto_hider.gd" id="3_8itgw"]
 [ext_resource type="PackedScene" uid="uid://cpd0nbs8o8ipt" path="res://scenes/player/player.tscn" id="3_bs0p0"]
 [ext_resource type="PackedScene" uid="uid://c6qy7wyqfwix" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
-[ext_resource type="PackedScene" uid="uid://cvm27ia16yap7" path="res://scenes/objects/Object.tscn" id="6_ov84t"]
+[ext_resource type="PackedScene" uid="uid://b8f6rlgsr765a" path="res://scenes/objects/Objet.tscn" id="6_rjlxl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_18m6p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -87,8 +87,8 @@ shadow_normal_bias = 1.524
 [node name="player" parent="." instance=ExtResource("3_bs0p0")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.14741, 0.480278, 0.474361)
 
-[node name="Area3D" parent="." instance=ExtResource("6_ov84t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04787, 1.30914, 0)
-
 [node name="camera_rig" parent="." instance=ExtResource("4_wc57n")]
 transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("6_rjlxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35153, 1.11794, 0)

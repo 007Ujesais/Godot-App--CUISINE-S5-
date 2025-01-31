@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7bxy"]
 
-[node name="Area3D" type="Area3D"]
+[node name="Area3D" type="Area3D" groups=["interactable"]]
 script = ExtResource("1_s2noj")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -14,5 +14,3 @@ size = Vector3(0.388099, 0.334737, 0.401854)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.488615, 0)
 shape = SubResource("BoxShape3D_a7bxy")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
