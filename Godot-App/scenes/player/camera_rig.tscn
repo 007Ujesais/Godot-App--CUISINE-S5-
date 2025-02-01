@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6qy7wyqfwix"]
+[gd_scene load_steps=4 format=3 uid="uid://c7wckob7pe8c8"]
 
 [ext_resource type="Script" path="res://scenes/player/camera_rig.gd" id="1_ooib6"]
-[ext_resource type="Shader" path="res://assets/shaders/forground_shader.gdshader" id="2_j476i"]
+[ext_resource type="Shader" path="res://assets/models/Player/shaders/forground_shader.gdshader" id="2_ucnsm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_latun"]
-shader = ExtResource("2_j476i")
+shader = ExtResource("2_ucnsm")
 shader_parameter/MULTIPLIER = 0.7
 shader_parameter/SCALE = 1.0
 shader_parameter/SOFTNESS = 0.45

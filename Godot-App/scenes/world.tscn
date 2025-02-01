@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmm3cd6ymtfjm"]
+[gd_scene load_steps=11 format=3 uid="uid://bmm3cd6ymtfjm"]
 
 [ext_resource type="Material" uid="uid://d23mm0aj88n02" path="res://materials/floor_material.tres" id="1_w33s1"]
 [ext_resource type="Material" uid="uid://bn0nf5oh3ywh4" path="res://materials/wall_material.tres" id="2_m01uf"]
 [ext_resource type="Script" path="res://scripts/world/auto_hider.gd" id="3_8itgw"]
 [ext_resource type="PackedScene" uid="uid://cpd0nbs8o8ipt" path="res://scenes/player/player.tscn" id="3_bs0p0"]
-[ext_resource type="PackedScene" uid="uid://c6qy7wyqfwix" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
-[ext_resource type="PackedScene" uid="uid://b8f6rlgsr765a" path="res://scenes/objects/Objet.tscn" id="6_rjlxl"]
+[ext_resource type="PackedScene" uid="uid://c7wckob7pe8c8" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
+[ext_resource type="PackedScene" uid="uid://cvm27ia16yap7" path="res://scenes/objects/Object.tscn" id="6_ov84t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_18m6p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,9 +21,12 @@ background_energy_multiplier = 2.0
 sky = SubResource("Sky_5rame")
 tonemap_mode = 2
 glow_strength = 0.07
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.005
 volumetric_fog_emission = Color(0.8, 0.952941, 1, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fsyh4"]
+radius = 0.303932
+height = 1.78352
 
 [node name="World" type="Node3D"]
 
@@ -85,10 +88,14 @@ shadow_enabled = true
 shadow_normal_bias = 1.524
 
 [node name="player" parent="." instance=ExtResource("3_bs0p0")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.14741, 0.480278, 0.474361)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.14741, 0.498084, 0.474361)
 
 [node name="camera_rig" parent="." instance=ExtResource("4_wc57n")]
 transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0, 0)
 
-[node name="Node3D" parent="." instance=ExtResource("6_rjlxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35153, 1.11794, 0)
+[node name="Object" parent="." instance=ExtResource("6_ov84t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28965, 1.43791, 0.547697)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888267, 0)
+shape = SubResource("CapsuleShape3D_fsyh4")

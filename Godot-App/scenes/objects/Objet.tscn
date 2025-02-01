@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8f6rlgsr765a"]
+[gd_scene load_steps=5 format=3 uid="uid://b8f6rlgsr765a"]
 
 [ext_resource type="Script" path="res://scripts/Object/Objet.gd" id="1_qyjqn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dxkh1"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_igutl"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_5fh70"]
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47201, 0)
 script = ExtResource("1_qyjqn")
 
 [node name="Area3D" type="Area3D" parent="." groups=["interactable"]]
@@ -14,5 +17,10 @@ script = ExtResource("1_qyjqn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_dxkh1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+shape = SubResource("SphereShape3D_igutl")
+target_position = Vector3(0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ShapeCast3D"]
 mesh = SubResource("SphereMesh_5fh70")
+skeleton = NodePath("../..")
