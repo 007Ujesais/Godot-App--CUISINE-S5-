@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://bn0nf5oh3ywh4" path="res://materials/wall_material.tres" id="2_m01uf"]
 [ext_resource type="Script" path="res://scripts/world/auto_hider.gd" id="3_8itgw"]
 [ext_resource type="PackedScene" uid="uid://cpd0nbs8o8ipt" path="res://scenes/player/player.tscn" id="3_bs0p0"]
-[ext_resource type="PackedScene" uid="uid://c7wckob7pe8c8" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
+[ext_resource type="PackedScene" uid="uid://dt6rxq0rqqlk7" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
 [ext_resource type="PackedScene" uid="uid://cvm27ia16yap7" path="res://scenes/objects/Object.tscn" id="6_ov84t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_18m6p"]
@@ -19,7 +19,10 @@ process_mode = 2
 background_mode = 2
 background_energy_multiplier = 2.0
 sky = SubResource("Sky_5rame")
-tonemap_mode = 2
+ambient_light_source = 2
+ambient_light_color = Color(0.886275, 0.827451, 1, 1)
+reflected_light_source = 2
+tonemap_mode = 3
 glow_strength = 0.07
 volumetric_fog_density = 0.005
 volumetric_fog_emission = Color(0.8, 0.952941, 1, 1)

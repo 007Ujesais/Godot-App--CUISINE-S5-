@@ -7,7 +7,7 @@ extends Node3D
 @onready var forground_camera = $base_camera/forground_viewport_container/forground_viweport/forground_camera
 
 # Vitesse de lissage de la caméra (ajustez selon vos besoins)
-var smooth_speed: float = 7.0
+@export var smooth_speed: float = 1.7
 
 func _ready():
 	resize()
