@@ -68,4 +68,4 @@ func send_response(peer: StreamPeerTCP, status_code: int, message: String):
 	response += "Content-Type: text/plain\r\n"
 	response += "\r\n"
 	response += message
-	peer.put_data(response.to_utf8_buffer())  # Correction ici
+	peer.put_data(response.to_utf8_buffer())
