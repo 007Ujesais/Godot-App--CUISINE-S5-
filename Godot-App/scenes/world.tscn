@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmm3cd6ymtfjm"]
+[gd_scene load_steps=14 format=3 uid="uid://bmm3cd6ymtfjm"]
 
 [ext_resource type="Material" uid="uid://d23mm0aj88n02" path="res://materials/floor_material.tres" id="1_w33s1"]
 [ext_resource type="Material" uid="uid://bn0nf5oh3ywh4" path="res://materials/wall_material.tres" id="2_m01uf"]
 [ext_resource type="Script" path="res://scripts/world/auto_hider.gd" id="3_8itgw"]
 [ext_resource type="PackedScene" uid="uid://cpd0nbs8o8ipt" path="res://scenes/player/player.tscn" id="3_bs0p0"]
+[ext_resource type="PackedScene" uid="uid://bt4apthq0kepa" path="res://assets/models/Object/WoodKitchenTable1.glb" id="4_2b4j0"]
 [ext_resource type="PackedScene" uid="uid://dt6rxq0rqqlk7" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
-[ext_resource type="PackedScene" uid="uid://cvm27ia16yap7" path="res://scenes/objects/Object.tscn" id="6_ov84t"]
+[ext_resource type="PackedScene" uid="uid://bxa8x2t7arm8" path="res://scenes/objects/Object.tscn" id="6_ov84t"]
+[ext_resource type="Script" path="res://scripts/Interface/ui_root.gd" id="8_0tifu"]
+[ext_resource type="PackedScene" uid="uid://buxtipcglim2h" path="res://scenes/Interface/dialog/inventory_dialog.tscn" id="8_kvvpp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_18m6p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -27,9 +30,8 @@ glow_strength = 0.07
 volumetric_fog_density = 0.005
 volumetric_fog_emission = Color(0.8, 0.952941, 1, 1)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fsyh4"]
-radius = 0.303932
-height = 1.78352
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujp8i"]
+size = Vector3(1.23157, 1, 2.59734)
 
 [node name="World" type="Node3D"]
 
@@ -37,6 +39,18 @@ height = 1.78352
 environment = SubResource("Environment_fsndb")
 
 [node name="Map" type="Node3D" parent="."]
+
+[node name="Table" type="RigidBody3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.834279, 0.818373, -1.73485)
+
+[node name="WoodKitchenTable1" parent="Map/Table" instance=ExtResource("4_2b4j0")]
+transform = Transform3D(0.0491112, 0, 0.998793, 0, 1, 0, -0.998793, 0, 0.0491112, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Table"]
+shape = SubResource("BoxShape3D_ujp8i")
+
+[node name="Object" parent="Map" instance=ExtResource("6_ov84t")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, -0.763612, 2.02673, -1.36606)
 
 [node name="floor" type="CSGBox3D" parent="Map"]
 material_override = ExtResource("1_w33s1")
@@ -94,11 +108,21 @@ shadow_normal_bias = 1.524
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.14741, 0.498084, 0.474361)
 
 [node name="camera_rig" parent="." instance=ExtResource("4_wc57n")]
-transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0, 0)
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, -0.0931261, 0, 0.359745)
 
-[node name="Object" parent="." instance=ExtResource("6_ov84t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28965, 1.43791, 0.547697)
+[node name="UIRoot" type="CanvasLayer" parent="."]
+script = ExtResource("8_0tifu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888267, 0)
-shape = SubResource("CapsuleShape3D_fsyh4")
+[node name="InventoryDialog" parent="UIRoot" instance=ExtResource("8_kvvpp")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -116.0
+offset_right = 24.0
+offset_bottom = -81.0
+grow_vertical = 0
+size_flags_vertical = 8

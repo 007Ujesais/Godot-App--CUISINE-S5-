@@ -1,37 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvm27ia16yap7"]
+[gd_scene load_steps=5 format=3 uid="uid://bxa8x2t7arm8"]
 
-[ext_resource type="Script" path="res://scripts/Object/Objet.gd" id="1_mxb3w"]
+[ext_resource type="Script" path="res://scripts/Object/Object.gd" id="1_iw2my"]
+[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/Plat.tres" id="2_38ish"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dxkh1"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_igutl"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_5fh70"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ckn7e"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wx85a"]
+height = 0.190387
 
 [node name="Object" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47201, 0)
 mass = 0.07
-script = ExtResource("1_mxb3w")
+script = ExtResource("1_iw2my")
+item = ExtResource("2_38ish")
 
 [node name="ActionableFinder" type="Area3D" parent="." groups=["interactable"]]
-collision_layer = 256
-collision_mask = 256
+collision_layer = 257
+collision_mask = 257
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActionableFinder"]
 shape = SubResource("SphereShape3D_dxkh1")
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-shape = SubResource("SphereShape3D_igutl")
-target_position = Vector3(0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ShapeCast3D"]
-mesh = SubResource("SphereMesh_5fh70")
-skeleton = NodePath("../..")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_ckn7e")
+shape = SubResource("CylinderShape3D_wx85a")
 
 [connection signal="area_entered" from="ActionableFinder" to="." method="_on_area_entered"]
 [connection signal="area_exited" from="ActionableFinder" to="." method="_on_area_exited"]

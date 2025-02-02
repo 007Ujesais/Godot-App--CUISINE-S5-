@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://drh6f58kicf6u"]
+
+[ext_resource type="PackedScene" uid="uid://fdxcckarw3ql" path="res://assets/models/Object/Plate1.glb" id="1_6prq3"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="1_bu4sg"]
+
+[sub_resource type="Gradient" id="Gradient_6u6ct"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7iqyj"]
+gradient = SubResource("Gradient_6u6ct")
+
+[resource]
+script = ExtResource("1_bu4sg")
+name = "Plat"
+scene = ExtResource("1_6prq3")
+icon = SubResource("GradientTexture2D_7iqyj")

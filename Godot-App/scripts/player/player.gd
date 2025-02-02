@@ -13,7 +13,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var walking = false
 
-var nearby_object: Node3D = null
+var inventory:Inventory = Inventory.new()
+
+var item_object:Item = null
+var nearby_object:Node3D = null
 
 var cane_take_object = false
 
@@ -57,9 +60,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 	if Input.is_action_just_pressed("interact") and cane_take_object:
-		pick_up_object(nearby_object)
+		pick_up_object(item_object)
 
-func pick_up_object(object):
-	print("Objet ramassé : ", object.name)
-	object.queue_free()
-	nearby_object = null
+func pick_up_object(item:Item):
+	print("Objet ramassé : ", item.name)
+	inventory.add_item(item)
+	
+	nearby_object.queue_free()
+	item_object = null

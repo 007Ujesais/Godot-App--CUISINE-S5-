@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://buxtipcglim2h"]
+
+[ext_resource type="Script" path="res://scripts/Interface/dialog/inventory_dialog.gd" id="1_vqm52"]
+[ext_resource type="PackedScene" uid="uid://c4la7eogbeytj" path="res://scenes/Interface/item_slot.tscn" id="2_2q52m"]
+
+[node name="InventoryDialog" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vqm52")
+slot_scene = ExtResource("2_2q52m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="closeButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = "close"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/closeButton" to="." method="_on_close_button_pressed"]

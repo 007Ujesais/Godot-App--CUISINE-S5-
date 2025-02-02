@@ -21,7 +21,7 @@ func _process(delta):
 		update = progress[0]
 	
 	if loading_bar.value < update:
-		loading_bar.value = lerp(loading_bar.value, update, 30 * delta)
+		loading_bar.value = lerp(loading_bar.value, update, 5 * delta)
 	
 	percentage_label.text = str(int(loading_bar.value * 100)) + " %"
 	
