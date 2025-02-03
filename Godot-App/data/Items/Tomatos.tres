@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://vwaghb07luhm"]
+
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="1_nxh2o"]
+[ext_resource type="PackedScene" uid="uid://bg3iib5j1ihul" path="res://assets/models/Object/Pencil1.glb" id="1_yrtmi"]
+
+[sub_resource type="Gradient" id="Gradient_upjb3"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_osk2m"]
+gradient = SubResource("Gradient_upjb3")
+
+[resource]
+script = ExtResource("1_nxh2o")
+name = "Tomatos"
+scene = ExtResource("1_yrtmi")
+icon = SubResource("GradientTexture1D_osk2m")
