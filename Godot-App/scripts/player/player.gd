@@ -89,7 +89,7 @@ func _handle_interaction():
 
 	# Permet de déposer un objet même s'il n'y a rien à proximité
 	elif Input.is_action_just_pressed("interact") and GameInteraction.drop and not GameInteraction.pick and inventory._content.size() > 0 and !can_interact_object:
-		drop_object()
+		drop_all_objects()
 
 # Ramasse un objet et l'ajoute à l'inventaire
 func pick_object(item: Item):
@@ -97,13 +97,17 @@ func pick_object(item: Item):
 	inventory.add_item(item)
 
 # Dépose un objet depuis l'inventaire
-func drop_object():
-	var item = inventory._content[0] if inventory._content.size() > 0 else null
-	if item:
-		print("Objet déposé : ", item.name)
+func drop_all_objects():
+	if inventory._content.is_empty():
+		print("⚠️ Aucun objet à déposer.")
+		return
+	
+	for item in inventory.get_items():
+		print("🗑️ Objet déposé :", item.name)
 		inventory.remove_item(item)
-	else:
-		print("Aucun objet à déposer.")
+	
+	print("✅ Tous les objets ont été déposés.")
+
 
 # Place un objet dans un emplacement spécifique
 func place_object(recipe: Recipe):

@@ -77,26 +77,6 @@ material_override = ExtResource("1_w33s1")
 use_collision = true
 size = Vector3(194.828, 1, 172.883)
 
-[node name="wall" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50168, 1.9912, 0)
-layers = 2
-material_override = ExtResource("2_m01uf")
-use_collision = true
-size = Vector3(1, 3, 10)
-
-[node name="wall2" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49832, 1.9912, 0)
-material_override = ExtResource("2_m01uf")
-use_collision = true
-size = Vector3(1, 3, 10)
-
-[node name="wall3" type="CSGBox3D" parent="Map"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.00431018, 1.9912, 4.50867)
-layers = 2
-material_override = ExtResource("2_m01uf")
-use_collision = true
-size = Vector3(1, 3, 7.99298)
-
 [node name="wall5" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, -1, -0.0284708, 1.9912, 2.71339)
 layers = 2
@@ -112,12 +92,6 @@ material_override = ExtResource("2_m01uf")
 use_collision = true
 size = Vector3(0.208267, 2.9845, 4)
 script = ExtResource("3_8itgw")
-
-[node name="wall4" type="CSGBox3D" parent="Map"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.00431058, 1.9912, -4.49133)
-material_override = ExtResource("2_m01uf")
-use_collision = true
-size = Vector3(1, 3, 7.99298)
 
 [node name="player" parent="." instance=ExtResource("3_bs0p0")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.498, 0)
