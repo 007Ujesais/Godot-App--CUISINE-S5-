@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxa8x2t7arm8"]
+[gd_scene load_steps=4 format=3 uid="uid://bxa8x2t7arm8"]
 
-[ext_resource type="Script" path="res://scripts/Object/Object.gd" id="1_iw2my"]
-[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/Plat.tres" id="2_38ish"]
+[ext_resource type="Script" path="res://scripts/Object/Interactive_object.gd" id="1_iw2my"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dxkh1"]
 
@@ -12,9 +11,8 @@ height = 0.190387
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47201, 0)
 mass = 0.07
 script = ExtResource("1_iw2my")
-item = ExtResource("2_38ish")
 
-[node name="ActionableFinder" type="Area3D" parent="." groups=["interactable"]]
+[node name="ActionableFinder" type="Area3D" parent="." groups=["object"]]
 collision_layer = 257
 collision_mask = 257
 

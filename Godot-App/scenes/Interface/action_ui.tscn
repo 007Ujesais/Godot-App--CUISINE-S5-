@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd0end5mwf310"]
+
+[ext_resource type="Script" path="res://scripts/Interface/action_ui.gd" id="1_orvoq"]
+[ext_resource type="PackedScene" uid="uid://b8s3afrc0xlpk" path="res://scenes/Interface/action_grid.tscn" id="2_kdcvn"]
+
+[node name="ActionUI" type="Node3D"]
+script = ExtResource("1_orvoq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="Container" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ActionGrid" parent="CanvasLayer/Container" instance=ExtResource("2_kdcvn")]
+unique_name_in_owner = true
+layout_mode = 0

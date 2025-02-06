@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Objects" load_steps=3 format=3 uid="uid://c7563tp7fimkr"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_m518q"]
+[ext_resource type="Script" path="res://scripts/Object/Objects.gd" id="2_ogy20"]
+
+[resource]
+script = ExtResource("2_ogy20")
+name = "Table"
+Actions = Array[ExtResource("1_m518q")]([])

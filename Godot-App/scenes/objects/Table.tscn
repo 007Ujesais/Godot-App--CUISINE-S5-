@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwlltj5038tam"]
+
+[ext_resource type="Script" path="res://scripts/Object/Interactive_object.gd" id="1_6v2pc"]
+[ext_resource type="PackedScene" uid="uid://bt4apthq0kepa" path="res://assets/models/Object/WoodKitchenTable1.glb" id="1_vhogc"]
+[ext_resource type="Resource" uid="uid://c7563tp7fimkr" path="res://data/Objects/Table.tres" id="2_4hhfy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujp8i"]
+size = Vector3(1.23157, 1, 2.51742)
+
+[node name="Table" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34776, 0.853224, -0.819132)
+script = ExtResource("1_6v2pc")
+object = ExtResource("2_4hhfy")
+
+[node name="ActionableFinder" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.432576, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActionableFinder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0180378, 0)
+shape = SubResource("BoxShape3D_ujp8i")
+
+[node name="WoodKitchenTable1" parent="." instance=ExtResource("1_vhogc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.510133, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.450613, -0.03996)
+shape = SubResource("BoxShape3D_ujp8i")
+
+[connection signal="area_entered" from="ActionableFinder" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="ActionableFinder" to="." method="_on_area_exited"]

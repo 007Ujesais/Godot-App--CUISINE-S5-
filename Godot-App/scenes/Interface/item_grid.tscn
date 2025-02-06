@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl0dc2ub8svvk"]
+
+[ext_resource type="Script" path="res://scripts/Interface/item_grid.gd" id="1_gqsao"]
+
+[node name="ItemGrid" type="GridContainer"]
+columns = 5
+script = ExtResource("1_gqsao")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8s3afrc0xlpk"]
+
+[ext_resource type="Script" path="res://scripts/Interface/action_grid.gd" id="1_ijb7u"]
+
+[node name="ActionGrid" type="GridContainer"]
+columns = 5
+script = ExtResource("1_ijb7u")

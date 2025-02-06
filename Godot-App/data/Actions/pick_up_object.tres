@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Action" load_steps=3 format=3 uid="uid://c3cfhv8auwhwc"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_ghi76"]
+[ext_resource type="Script" path="res://scripts/Actions/pick_up_object.gd" id="2_1y00w"]
+
+[resource]
+script = ExtResource("1_ghi76")
+name = "Pick"
+scripts = ExtResource("2_1y00w")

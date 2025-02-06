@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7turwwvevc5a"]
+
+[ext_resource type="Script" path="res://scripts/Object/Interactive_object.gd" id="1_l2tf5"]
+[ext_resource type="Resource" uid="uid://cuv8romcwndlh" path="res://data/Recipes/Oven.tres" id="2_ipmbn"]
+[ext_resource type="PackedScene" uid="uid://kkwl1nslot21" path="res://assets/models/Object/OvenSolo1.glb" id="3_kbsx1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujp8i"]
+size = Vector3(0.511963, 0.419434, 0.875977)
+
+[node name="Oven" type="RigidBody3D"]
+script = ExtResource("1_l2tf5")
+object = ExtResource("2_ipmbn")
+
+[node name="ActionableFinder" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.432576, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActionableFinder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.436965, 0)
+shape = SubResource("BoxShape3D_ujp8i")
+
+[node name="OvenSolo1" parent="." instance=ExtResource("3_kbsx1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ujp8i")
+
+[connection signal="area_entered" from="ActionableFinder" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="ActionableFinder" to="." method="_on_area_exited"]

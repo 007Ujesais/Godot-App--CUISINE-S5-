@@ -3,16 +3,21 @@
 [ext_resource type="Script" path="res://scripts/Interface/loding.gd" id="1_s26jm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btvox"]
-bg_color = Color(0.270588, 0.270588, 0.270588, 1)
+bg_color = Color(1, 1, 1, 0.301961)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.298039, 0.298039, 0.298039, 1)
-border_blend = true
+border_color = Color(1, 1, 1, 0.301961)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 15
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg734"]
-bg_color = Color(1, 1, 1, 0.47451)
+bg_color = Color(0.421571, 0.148024, 1, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 7
 corner_radius_top_right = 7
@@ -27,39 +32,56 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s26jm")
-loading_bar = NodePath("ProgressBar")
-percentage_label = NodePath("Label")
+loading_bar = NodePath("VBoxContainer/HBoxContainer/VBoxContainer/ProgressBar")
+percentage_label = NodePath("VBoxContainer/HBoxContainer/VBoxContainer/Label")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-clip_contents = true
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = -38.0
-offset_right = -10.0
-offset_bottom = -26.0
+offset_left = 16.0
+offset_top = -47.0
+offset_right = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "0%"
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_btvox")
 theme_override_styles/fill = SubResource("StyleBoxFlat_yg734")
 max_value = 1.0
 show_percentage = false
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -39.0
-offset_top = -67.0
-offset_right = 1.0
-offset_bottom = -41.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "0%"
