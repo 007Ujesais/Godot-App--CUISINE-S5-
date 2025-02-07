@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://clm6mt72vdgj"]
+
+[ext_resource type="PackedScene" uid="uid://dm6uovfcihsrw" path="res://assets/models/Environement/bedBunk.glb" id="1_keakl"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n2fqq"]
+points = PackedVector3Array(0.003, 0, -1.095, 0.003, 0.85, -1.095, 0.568, 0, -1.095, 0.003, 0, 0, 0.568, 0.85, -1.095, 0.003, 0.85, 0, 0.568, 0, 0, 0.568, 0.85, 0)
+
+[node name="bedBunk" instance=ExtResource("1_keakl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bedBunk(Clone)" index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bedBunk(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_n2fqq")

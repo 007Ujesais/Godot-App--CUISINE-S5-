@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://2mlbwil144rn"]
+
+[ext_resource type="FontFile" uid="uid://vbxyw82hg2gp" path="res://assets/fonts/Matt_Trial-Medium.ttf" id="1_5gxhk"]
+[ext_resource type="Texture2D" uid="uid://bkp4gorj58xq6" path="res://assets/Themes/Rectangle 604.png" id="2_tit3m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qknan"]
+texture = ExtResource("2_tit3m")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+modulate_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tl5t6"]
+texture = ExtResource("2_tit3m")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[resource]
+Button/font_sizes/font_size = 17
+Button/fonts/font = ExtResource("1_5gxhk")
+Label/colors/font_color = Color(0.615686, 0.52549, 0, 1)
+Label/font_sizes/font_size = 17
+Label/fonts/font = ExtResource("1_5gxhk")
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 0)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 17
+ProgressBar/fonts/font = ExtResource("1_5gxhk")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_qknan")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_tl5t6")

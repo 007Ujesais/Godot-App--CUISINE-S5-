@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ybhcn22py6k"]
+
+[ext_resource type="PackedScene" uid="uid://c8sl1xhco6viw" path="res://assets/models/Environement/bookcaseClosedWide.glb" id="1_wc571"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pjmfb"]
+points = PackedVector3Array(0.8, 0.789923, 0, 0.8, 0, 0, 0.8, 0.789923, -0.25, 0, 0.789923, 0, 0.8, 0, -0.25, 0, 0, 0, 0, 0.789923, -0.25, 0, 0, -0.25)
+
+[node name="bookcaseClosedWide" instance=ExtResource("1_wc571")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bookcaseClosedWide(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bookcaseClosedWide(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_pjmfb")

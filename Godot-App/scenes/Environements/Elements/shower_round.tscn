@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://casuc12ywkpev"]
+
+[ext_resource type="PackedScene" uid="uid://bfryoyjq1axks" path="res://assets/models/Environement/showerRound.glb" id="1_jactt"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gj2cd"]
+points = PackedVector3Array(0, 0, -0.561792, 0.561792, 0, -0.561792, 0, 0, -0.535231, 0, 1.09403, -0.561792, 0.561792, 0, 0, 0.561792, 1.09403, -0.561792, 0.00456429, 0, -0.465337, 0, 1.09403, -0.535231, 0.535176, 0, 0, 0.561792, 1.09403, 0, 0.0182022, 0, -0.396708, 0.00456429, 1.09403, -0.465337, 0.465282, 0, -0.00461924, 0.535176, 1.09403, 0, 0.0406936, 0, -0.330388, 0.0182022, 1.09403, -0.396708, 0.396653, 0, -0.0182571, 0.465282, 1.09403, -0.00461924, 0.0716538, 0, -0.267643, 0.0406936, 1.09403, -0.330388, 0.330333, 0, -0.0407486, 0.396653, 1.09403, -0.0182571, 0.110588, 0, -0.209407, 0.0716538, 1.09403, -0.267643, 0.267588, 0, -0.0717088, 0.330333, 1.09403, -0.0407486, 0.156725, 0, -0.15678, 0.110588, 1.09403, -0.209407, 0.209352, 0, -0.110643, 0.267588, 1.09403, -0.0717088, 0.156725, 1.09403, -0.15678, 0.209352, 1.09403, -0.110643)
+
+[node name="showerRound" instance=ExtResource("1_jactt")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="showerRound(Clone)" index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="showerRound(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_gj2cd")

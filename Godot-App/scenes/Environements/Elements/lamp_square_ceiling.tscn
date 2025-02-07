@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://5y7yh2s5ldmf"]
+
+[ext_resource type="PackedScene" uid="uid://0ugx508yhmma" path="res://assets/models/Environement/lampSquareCeiling.glb" id="1_lye6r"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iuitu"]
+points = PackedVector3Array(0, 0, -0.12, 0, 0, 0, 0, 0.149986, -0.12, 0.12, 0, -0.12, 0.12, 0, 0, 0, 0.149986, 0, 0.0208144, 0.23, -0.0991856, 0.12, 0.149986, -0.12, 0.12, 0.149986, 0, 0.0208144, 0.23, -0.0208262, 0.0991738, 0.23, -0.0991856, 0.0991738, 0.23, -0.0208262)
+
+[node name="lampSquareCeiling" instance=ExtResource("1_lye6r")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lampSquareCeiling(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lampSquareCeiling(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_iuitu")

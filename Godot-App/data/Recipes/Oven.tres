@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_ew6n5"]
 [ext_resource type="Script" path="res://scripts/Object/Item.gd" id="1_uvxgv"]
-[ext_resource type="Resource" uid="uid://vwaghb07luhm" path="res://data/Items/Tomatos.tres" id="2_ssorf"]
-[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/Plat.tres" id="3_r3rb7"]
+[ext_resource type="Resource" uid="uid://vwaghb07luhm" path="res://data/Items/eggplant.tres" id="2_ssorf"]
+[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/pizza.tres" id="3_r3rb7"]
 [ext_resource type="Script" path="res://scripts/Object/Recipe.gd" id="4_31btd"]
 
 [resource]

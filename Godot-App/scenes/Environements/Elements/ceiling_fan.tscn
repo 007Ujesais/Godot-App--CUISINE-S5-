@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqkgd2f0teb0q"]
+
+[ext_resource type="PackedScene" uid="uid://b0nb6enmnlulg" path="res://assets/models/Environement/ceilingFan.glb" id="1_r8ex3"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dnr4u"]
+points = PackedVector3Array(0.282785, -0.0524741, 0.0339619, -0.11097, -0.0524741, 0.261347, 0.282785, -0.0682726, 0.0339619, 0.282785, -0.0524741, -0.0364535, 0.0111272, 0, 0.00523037, -0.171907, -0.0524741, 0.226088, -0.11097, -0.0682726, 0.261347, -4.53442e-05, 0, 0.0116551, -0.0111734, 0, 0.00523037, 0.0137089, -0.133718, 0.0067209, 0.282785, -0.0682726, -0.0364535, 0.0111272, 0, -0.00767058, -0.11097, -0.0524741, -0.263736, -0.171907, -0.0682726, 0.226088, -0.171907, -0.0524741, -0.22858, -0.0137551, -0.133718, 0.0067209, -4.53442e-05, -0.133718, 0.0146362, -0.0111734, 0, -0.00767058, 0.0137089, -0.133718, -0.00916111, -0.11097, -0.0682726, -0.263736, -4.53442e-05, 0, -0.0140954, -0.171907, -0.0682726, -0.22858, -0.0137551, -0.133718, -0.00916111, -4.53442e-05, -0.133718, -0.0170764)
+
+[node name="ceilingFan" instance=ExtResource("1_r8ex3")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ceilingFan(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ceilingFan(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_dnr4u")

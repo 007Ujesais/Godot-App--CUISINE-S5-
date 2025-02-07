@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://byel10sl4cqwx"]
+
+[ext_resource type="PackedScene" uid="uid://l3m45pu44kx4" path="res://assets/models/Environement/table.glb" id="1_nayme"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_201da"]
+points = PackedVector3Array(0, 0, -0.447373, 0, 0, 0, 0, 0.326734, -0.447373, 0.841488, 0, -0.447373, 0, 0.326734, 0, 0.841488, 0, 0, 0.841488, 0.326734, -0.447373, 0.841488, 0.326734, 0)
+
+[node name="table" instance=ExtResource("1_nayme")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="table(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="table(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_201da")

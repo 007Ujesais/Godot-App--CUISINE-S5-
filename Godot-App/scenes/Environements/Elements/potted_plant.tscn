@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck14oo6hs80s8"]
+
+[ext_resource type="PackedScene" uid="uid://cb880abevg1b5" path="res://assets/models/Environement/pottedPlant.glb" id="1_53dvs"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_atf3f"]
+points = PackedVector3Array(0.106009, 0.39685, 0, 0.212039, 0.535777, -0.120755, 0, 0.535777, -0.120755, 0.0462479, 0.173802, -0.0947317, 0.106009, 0, -0.120755, 0.165791, 0.173802, -0.0947317, 0.106009, 0.39685, -0.241462, 0.165791, 0.173802, -0.146754, 0.0462479, 0.173802, -0.146754)
+
+[node name="pottedPlant" instance=ExtResource("1_53dvs")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pottedPlant(Clone)/plant" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pottedPlant(Clone)/plant/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_atf3f")

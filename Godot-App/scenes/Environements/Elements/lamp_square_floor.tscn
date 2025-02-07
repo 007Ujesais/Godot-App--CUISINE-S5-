@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5yricpjdo7n1"]
+
+[ext_resource type="PackedScene" uid="uid://m4o0s6ttux1a" path="res://assets/models/Environement/lampSquareFloor.glb" id="1_v0lcn"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j83on"]
+points = PackedVector3Array(0, 0, -0.12, 0.12, 0, -0.12, 0, 0, 0, 0, 0.86, -0.12, 0.12, 0, 0, 0.12, 0.86, -0.12, 0, 0.86, 0, 0.12, 0.86, 0)
+
+[node name="lampSquareFloor" instance=ExtResource("1_v0lcn")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lampSquareFloor(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lampSquareFloor(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_j83on")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://y0wwoaakcqb4"]
+
+[ext_resource type="PackedScene" uid="uid://dn1enufnea4sr" path="res://assets/models/Environement/stoolBarSquare.glb" id="1_0601y"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nrxlc"]
+points = PackedVector3Array(0.05597, 0.35497, -0.188751, 0.05597, 0.35497, -0.0411269, 0.05597, 0.405, -0.188751, 0.20947, 0.35497, -0.188751, 0.0659619, 0, -0.178751, 0.20947, 0.35497, -0.0411269, 0.05597, 0.405, -0.0411269, 0.0659619, 0, -0.0511409, 0.20947, 0.405, -0.188751, 0.199463, 0, -0.178751, 0.20947, 0.405, -0.0411269, 0.199463, 0, -0.0511409)
+
+[node name="stoolBarSquare" instance=ExtResource("1_0601y")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stoolBarSquare(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stoolBarSquare(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_nrxlc")

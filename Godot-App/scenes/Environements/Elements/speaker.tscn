@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmrkb3pg7xi3l"]
+
+[ext_resource type="PackedScene" uid="uid://bcbqx1ygtqpi5" path="res://assets/models/Environement/speaker.glb" id="1_mrusj"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yl27a"]
+points = PackedVector3Array(-1.08287e-15, 1.69198e-17, -0.148, 0.148, 1.69198e-17, -0.148, -1.08287e-15, 1.69198e-17, 0, -1.08287e-15, 0.6364, -0.148, 0.148, 1.69198e-17, 0, 0.148, 0.6364, -0.148, -1.08287e-15, 0.238401, 0, -1.08287e-15, 0.6364, -0.0148058, 0.148, 0.238401, 0, 0.148, 0.6364, -0.0148058)
+
+[node name="speaker" instance=ExtResource("1_mrusj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="speaker(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="speaker(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_yl27a")

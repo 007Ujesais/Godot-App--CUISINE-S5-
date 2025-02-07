@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4dlbo5lr4q2p"]
+
+[ext_resource type="PackedScene" uid="uid://bkynxtr30jyei" path="res://assets/models/Environement/cabinetTelevision.glb" id="1_78twc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vla5a"]
+points = PackedVector3Array(0.8, 0.31, 0, 0.8, 0, 0, 0.8, 0.31, -0.25, 0, 0.31, 0, 0.8, 0, -0.25, 0, 0, 0, 0, 0.31, -0.25, 0, 0, -0.25)
+
+[node name="cabinetTelevision" instance=ExtResource("1_78twc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cabinetTelevision(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cabinetTelevision(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_vla5a")

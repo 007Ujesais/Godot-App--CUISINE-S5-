@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cue0ed82q5047"]
+
+[ext_resource type="PackedScene" uid="uid://cxdo1b1o31kf1" path="res://assets/models/Environement/wallWindow.glb" id="1_qq663"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_thp7r"]
+points = PackedVector3Array(0, 0, -0.0500049, 0, 0, -3.8594e-06, 0, 1.28953, -0.0500049, 0.262921, 0.342958, -0.06955, 1, 0, -0.0500049, 1, 0, -3.8594e-06, 0.262921, 0.342958, 0.01955, 0, 1.28953, -3.8594e-06, 1, 1.28953, -0.0500049, 0.262921, 1.1065, -0.06955, 0.736981, 0.342958, -0.06955, 1, 1.28953, -3.8594e-06, 0.736981, 0.342958, 0.01955, 0.262921, 1.1065, 0.01955, 0.736981, 1.1065, -0.06955, 0.736981, 1.1065, 0.01955)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j6ult"]
+points = PackedVector3Array(0, 0, -0.0500049, 0, 0, -3.8594e-06, 0, 1.28953, -0.0500049, 0.262921, 0.342958, -0.06955, 1, 0, -0.0500049, 1, 0, -3.8594e-06, 0.262921, 0.342958, 0.01955, 0, 1.28953, -3.8594e-06, 1, 1.28953, -0.0500049, 0.262921, 1.1065, -0.06955, 0.736981, 0.342958, -0.06955, 1, 1.28953, -3.8594e-06, 0.736981, 0.342958, 0.01955, 0.262921, 1.1065, 0.01955, 0.736981, 1.1065, -0.06955, 0.736981, 1.1065, 0.01955)
+
+[node name="wallWindow" instance=ExtResource("1_qq663")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wallWindow(Clone)" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallWindow(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_thp7r")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="wallWindow(Clone)" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallWindow(Clone)/StaticBody3D2" index="0"]
+shape = SubResource("ConvexPolygonShape3D_j6ult")

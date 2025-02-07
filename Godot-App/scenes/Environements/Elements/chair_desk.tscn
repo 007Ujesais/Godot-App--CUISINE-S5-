@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbsn7073gqbx5"]
+
+[ext_resource type="PackedScene" uid="uid://bmwl6k633qp5i" path="res://assets/models/Environement/chairDesk.glb" id="1_wfd2h"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kso81"]
+points = PackedVector3Array(0.100811, 0, -0.283238, 0.0648614, 0, -0.257134, 0.100811, 0.012591, -0.283238, 0.23411, 0, -0.283238, 0.0236753, 0, -0.130359, 0.0648614, 0.012591, -0.257134, 0.167447, 0.19, -0.19151, 0.23411, 0.012591, -0.283238, 0.27006, 0, -0.257134, 0.0236753, 0.012591, -0.130359, 0.0373852, 0, -0.0880825, 0.131497, 0.19, -0.165379, 0.203397, 0.19, -0.165379, 0.27006, 0.012591, -0.257134, 0.311275, 0, -0.130359, 0.0373852, 0.012591, -0.0880825, 0.145235, 0, -0.00971493, 0.145235, 0.19, -0.12313, 0.311275, 0.012591, -0.130359, 0.189687, 0.19, -0.12313, 0.297537, 0, -0.0880825, 0.145235, 0.012591, -0.00971493, 0.189687, 0, -0.00971493, 0.297537, 0.012591, -0.0880825, 0.189687, 0.012591, -0.00971493)
+
+[node name="chairDesk" instance=ExtResource("1_wfd2h")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="chairDesk(Clone)" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chairDesk(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_kso81")

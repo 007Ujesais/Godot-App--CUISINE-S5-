@@ -16,6 +16,10 @@ script = ExtResource("1_ooib6")
 [node name="base_camera" type="Camera3D" parent="."]
 unique_name_in_owner = true
 cull_mask = 1047552
+doppler_tracking = 2
+projection = 1
+current = true
+size = 7.0
 
 [node name="background_viewport_container" type="SubViewportContainer" parent="base_camera"]
 unique_name_in_owner = true
@@ -35,7 +39,6 @@ render_target_update_mode = 4
 unique_name_in_owner = true
 cull_mask = 1047553
 doppler_tracking = 2
-projection = 1
 current = true
 fov = 50.0
 size = 7.0
@@ -59,7 +62,6 @@ render_target_update_mode = 4
 unique_name_in_owner = true
 cull_mask = 1047554
 doppler_tracking = 2
-projection = 1
 current = true
 fov = 50.0
 size = 7.0

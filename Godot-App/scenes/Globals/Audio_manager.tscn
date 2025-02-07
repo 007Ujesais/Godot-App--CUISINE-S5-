@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://csfla4xpwne4v"]
+
+[ext_resource type="Script" path="res://scripts/globals/audio_manager.gd" id="1_1euxx"]
+[ext_resource type="AudioStream" uid="uid://c3vw58nfq8301" path="res://assets/Musics/Kitchen Dreams.mp3" id="1_5bove"]
+
+[node name="AudioManager" type="AudioStreamPlayer"]
+stream = ExtResource("1_5bove")
+script = ExtResource("1_1euxx")

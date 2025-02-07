@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtdnj480subk0"]
+
+[ext_resource type="PackedScene" uid="uid://k0ptik8oujw5" path="res://assets/models/Environement/cardboardBoxOpen.glb" id="1_sny1v"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j6onn"]
+points = PackedVector3Array(0.292151, 0.281, 0, 0.212469, 0, 0, 0.292151, 0.281, -0.2125, -0.0796875, 0.281, 0, 0.212469, 0, -0.2125, -5.20051e-06, 0, 0, -0.0796875, 0.281, -0.2125, -5.20051e-06, 0, -0.2125)
+
+[node name="cardboardBoxOpen" instance=ExtResource("1_sny1v")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cardboardBoxOpen(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cardboardBoxOpen(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_j6onn")

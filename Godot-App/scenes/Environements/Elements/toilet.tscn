@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp6tw37u2xt5e"]
+
+[ext_resource type="PackedScene" uid="uid://bw7mk43fl4vpo" path="res://assets/models/Environement/toilet.glb" id="1_gs5rw"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fub2c"]
+points = PackedVector3Array(0.178575, 0.9494, -0.00946808, 0.178575, 0.9494, -0.648661, -1.44382e-15, 0.9494, -0.00946808, 0.605641, 0.479347, 0, 1.00458, 0.479347, -0.164564, -1.44382e-15, 0.9494, -0.648661, 1.00458, 0.479347, -0.493564, 0.605641, 0.479347, -0.658, -1.44382e-15, 0.855352, -0.00946808, 0.605641, 0.385392, 0, 1.00458, 0.385392, -0.164564, -1.44382e-15, 0.855352, -0.648661, 1.00458, 0.385392, -0.493564, 0.605641, 0.385392, -0.658, 0.0187818, 0.404164, -0.183372, 0.0187818, 0.479347, -0.0752295, 0.605641, 0, -0.0705276, 0.985014, 0, -0.18788, 0.0187818, 0.479347, -0.582835, 0.0187818, 0.404164, -0.474757, 0.605641, 0, -0.587537, 0.985014, 0, -0.470184, 0.226267, 0, -0.18788, 0.226267, 0, -0.470184)
+
+[node name="toilet" instance=ExtResource("1_gs5rw")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="toilet(Clone)" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="toilet(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_fub2c")

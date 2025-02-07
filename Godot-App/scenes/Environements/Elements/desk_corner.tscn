@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://chnmqvvxm8tkt"]
+
+[ext_resource type="PackedScene" uid="uid://dxm6t1571f7yp" path="res://assets/models/Environement/deskCorner.glb" id="1_8ktsh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pxrjs"]
+points = PackedVector3Array(0, 0.35438, -0.974476, 0.00992027, 0, -0.964555, 0, 0.35438, -0.584533, 0, 0.384408, -0.974476, 0.974476, 0.35438, -0.974476, 0.00992027, 0, -0.594548, 0.96446, 0, -0.964555, 0, 0.384408, -0.584533, 0.584437, 0.35438, 0, 0.974476, 0.384408, -0.974476, 0.974476, 0.35438, 0, 0.594453, 0, -0.0100157, 0.96446, 0, -0.0100157, 0.584437, 0.384408, 0, 0.974476, 0.384408, 0)
+
+[node name="deskCorner" instance=ExtResource("1_8ktsh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="deskCorner(Clone)" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deskCorner(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_pxrjs")

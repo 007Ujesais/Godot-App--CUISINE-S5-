@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://vw5twkcjbhg5"]
+
+[ext_resource type="PackedScene" uid="uid://cvseobb02lmge" path="res://assets/models/Environement/wallCornerRond.glb" id="1_acnh1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xmt6h"]
+points = PackedVector3Array(0, 0, -0.0500147, 0, 0, 0, 0, 1.28953, -0.0500147, 0.499985, 0, -0.55, 0.449971, 0, 0, 0, 1.28953, 0, 0.499985, 1.28953, -0.55, 0.55, 0, -0.55, 0.462999, 0, -0.000861406, 0.449971, 1.28953, 0, 0.55, 1.28953, -0.55, 0.55, 0, -0.100029, 0.475866, 0, -0.00344557, 0.462999, 1.28953, -0.000861406, 0.55, 1.28953, -0.100029, 0.549139, 0, -0.0870008, 0.488249, 0, -0.00764483, 0.475866, 1.28953, -0.00344557, 0.549139, 1.28953, -0.0870008, 0.546554, 0, -0.0741337, 0.499985, 0, -0.0134054, 0.488249, 1.28953, -0.00764483, 0.546554, 1.28953, -0.0741337, 0.542355, 0, -0.0617512, 0.51086, 0, -0.0206735, 0.499985, 1.28953, -0.0134054, 0.542355, 1.28953, -0.0617512, 0.536595, 0, -0.0500147, 0.520659, 0, -0.0293412, 0.51086, 1.28953, -0.0206735, 0.536595, 1.28953, -0.0500147, 0.529327, 0, -0.0391396, 0.520659, 1.28953, -0.0293412, 0.529327, 1.28953, -0.0391396)
+
+[node name="wallCornerRond" instance=ExtResource("1_acnh1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wallCornerRond(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallCornerRond(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_xmt6h")

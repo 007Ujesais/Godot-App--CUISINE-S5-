@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://chuqrua4c0evw"]
+
+[ext_resource type="PackedScene" uid="uid://cqskk8ibi7pqa" path="res://assets/models/Environement/tableCoffee.glb" id="1_q6ews"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ad52c"]
+points = PackedVector3Array(-0.460996, -3.60956e-16, -0.3, -0.460996, -3.60956e-16, 0.1, -0.460996, 0.23, -0.3, 0.2, -3.60956e-16, -0.3, -0.460996, 0.23, 0.1, 0.2, -3.60956e-16, 0.1, 0.2, 0.23, -0.3, 0.2, 0.23, 0.1)
+
+[node name="tableCoffee" instance=ExtResource("1_q6ews")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tableCoffee(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tableCoffee(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ad52c")

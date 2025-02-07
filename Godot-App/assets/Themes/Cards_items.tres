@@ -1,0 +1,35 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://0fpkee3b2xe"]
+
+[ext_resource type="FontFile" uid="uid://vbxyw82hg2gp" path="res://assets/fonts/Matt_Trial-Medium.ttf" id="1_3o7k6"]
+[ext_resource type="Texture2D" uid="uid://bkp4gorj58xq6" path="res://assets/Themes/Rectangle 604.png" id="2_oe1ok"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xhgk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cbpg"]
+texture = ExtResource("2_oe1ok")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[resource]
+Button/fonts/font = ExtResource("1_3o7k6")
+ColorPickerButton/fonts/font = ExtResource("1_3o7k6")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0.315038, 0.139584, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 27
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 17
+Label/fonts/font = ExtResource("1_3o7k6")
+Label/styles/normal = SubResource("StyleBoxEmpty_1xhgk")
+LineEdit/fonts/font = ExtResource("1_3o7k6")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_2cbpg")
+TabBar/fonts/font = ExtResource("1_3o7k6")
+TextEdit/fonts/font = ExtResource("1_3o7k6")
+Tree/fonts/font = ExtResource("1_3o7k6")
+Tree/fonts/title_button_font = ExtResource("1_3o7k6")
+VBoxContainer/constants/separation = 1

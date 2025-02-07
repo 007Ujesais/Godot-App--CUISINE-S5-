@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5epvdbqdrg5m"]
+
+[ext_resource type="PackedScene" uid="uid://bq0xojwc2nsuy" path="res://assets/models/Environement/coatRack.glb" id="1_p8ovp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j6c2k"]
+points = PackedVector3Array(0.448, 0.28, -0.112009, 0.448, 0.223978, 0, 0.448, 0.28, -0.1344, 0, 0.28, -0.112009, 0.448, 0.201586, 0, 0, 0.223978, 0, 0.448, 0, -0.1344, 0, 0.28, -0.1344, 0.448, 0, -0.112009, 0, 0.201586, 0, 0, 0, -0.1344, 0, 0, -0.112009)
+
+[node name="coatRack" instance=ExtResource("1_p8ovp")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coatRack(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coatRack(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_j6c2k")

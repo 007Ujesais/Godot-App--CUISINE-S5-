@@ -11,7 +11,7 @@ var is_loading_complete: bool = false
 var delay_timer: float = 0.0
 
 func _ready():
-	scene = "res://scenes/world.tscn"
+	scene = "res://scenes/Game/World.tscn"
 	ResourceLoader.load_threaded_request(scene)
 
 func _process(delta):

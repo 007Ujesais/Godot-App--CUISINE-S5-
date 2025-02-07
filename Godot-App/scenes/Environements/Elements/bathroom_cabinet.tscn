@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmwtj5s463dok"]
+
+[ext_resource type="PackedScene" uid="uid://dy0p2gvfpwixc" path="res://assets/models/Environement/bathroomCabinet.glb" id="1_jj6hd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qul0q"]
+points = PackedVector3Array(0.2, 0, -0.21, 0.43, 0, -0.21, 0.2, 0, -0.08, 0.2, 0.389962, -0.21, 0.43, 0, -0.08, 0.43, 0.389962, -0.21, 0.2, 0.389962, -0.08, 0.43, 0.389962, -0.08)
+
+[node name="bathroomCabinet" instance=ExtResource("1_jj6hd")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bathroomCabinet(Clone)" index="1"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bathroomCabinet(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_qul0q")

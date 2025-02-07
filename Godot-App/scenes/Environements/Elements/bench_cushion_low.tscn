@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://do08dbjol17a6"]
+
+[ext_resource type="PackedScene" uid="uid://csdroeqeghr20" path="res://assets/models/Environement/benchCushionLow.glb" id="1_0ug1r"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6jdlv"]
+points = PackedVector3Array(-0.01, 0.169988, -0.21, -9.7882e-06, 0, -0.200008, -0.01, 0.169988, 0.00999999, -0.01, 0.2, -0.21, 0.41, 0.169988, -0.21, -9.7882e-06, 0, -1.37091e-05, 0.399969, 0, -0.200008, -0.01, 0.2, 0.00999999, 0.41, 0.169988, 0.00999999, 0.41, 0.2, -0.21, 0.399969, 0, -1.37091e-05, 0.41, 0.2, 0.00999999)
+
+[node name="benchCushionLow" instance=ExtResource("1_0ug1r")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="benchCushionLow(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="benchCushionLow(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_6jdlv")

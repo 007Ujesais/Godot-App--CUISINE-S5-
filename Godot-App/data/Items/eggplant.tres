@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://vwaghb07luhm"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_xeu2u"]
+[ext_resource type="Resource" uid="uid://c3cfhv8auwhwc" path="res://data/Actions/pick_up_object.tres" id="2_kvgtw"]
+[ext_resource type="Texture2D" uid="uid://djsad5wxxkl2v" path="res://assets/Icons/eggplant.png" id="3_fxbom"]
+[ext_resource type="PackedScene" uid="uid://bg3iib5j1ihul" path="res://assets/models/Object/Pencil1.glb" id="4_3p55w"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="5_cpqrd"]
+
+[resource]
+script = ExtResource("5_cpqrd")
+scene = ExtResource("4_3p55w")
+icon = ExtResource("3_fxbom")
+name = "eggplant"
+Actions = Array[ExtResource("1_xeu2u")]([ExtResource("2_kvgtw")])

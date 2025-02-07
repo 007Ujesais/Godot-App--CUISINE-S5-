@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcmqhob8gin0"]
+
+[ext_resource type="PackedScene" uid="uid://c7xn7pcw3qx28" path="res://assets/models/Environement/kitchenSink.glb" id="1_l6m0x"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eiv0n"]
+points = PackedVector3Array(0.43, 0.419973, 0, 0, 0.419973, 0, 0.43, 0.389995, 0, 0.43, 0.449998, -0.420003, 0.233183, 0.49, -0.301689, 0.233183, 0.489712, -0.297768, 0.233183, 0.488945, -0.293936, 0, 0.389995, 0, 0.203172, 0.488945, -0.293936, 0.203172, 0.489712, -0.297768, 0.203172, 0.49, -0.301689, 0, 0.449998, -0.420003, 0.43, 0.0582283, -0.0200421, 0.43, 0.449998, -0.45, 0.233183, 0.49, -0.361683, 0, 0.0582283, -0.0200421, 0.203172, 0.49, -0.361683, 0, 0.449998, -0.45, 0.43, 0, -0.0400401, 0.233183, 0.485971, -0.376703, 0.233183, 0.487698, -0.373179, 0.233183, 0.488945, -0.369435, 0.233183, 0.489712, -0.365603, 0.43, 0, -0.45, 0, 0, -0.0400401, 0.203172, 0.489712, -0.365603, 0.203172, 0.488945, -0.369435, 0.203172, 0.487698, -0.373179, 0.203172, 0.485971, -0.376703, 0, 0, -0.45)
+
+[node name="kitchenSink" instance=ExtResource("1_l6m0x")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="kitchenSink(Clone)" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="kitchenSink(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_eiv0n")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://deeqqyt14d46r"]
+
+[ext_resource type="PackedScene" uid="uid://u0febjynugri" path="res://assets/models/Environement/washerDryerStacked.glb" id="1_fxkvg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u83o2"]
+points = PackedVector3Array(0, 0, -0.35, 0.389962, 0, -0.35, 0, 0, -0.0200078, 0, 0.94, -0.35, 0.389962, 0, -0.0200078, 0.389962, 0.94, -0.35, 0, 0.0624765, -3.42429e-05, 0, 0.94, -0.0192198, 0.389962, 0.0624765, -3.42429e-05, 0.389962, 0.94, -0.0192198, 0, 0.858937, -3.42429e-05, 0.0169117, 0.875407, -0.00390562, 0.389962, 0.858937, -3.42429e-05, 0.37305, 0.875407, -0.00390562)
+
+[node name="washerDryerStacked" instance=ExtResource("1_fxkvg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="washerDryerStacked(Clone)" index="2"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="washerDryerStacked(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_u83o2")

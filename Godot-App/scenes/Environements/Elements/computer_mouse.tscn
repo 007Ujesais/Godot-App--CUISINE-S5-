@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://6pv47b6o1wwg"]
+
+[ext_resource type="PackedScene" uid="uid://x4j58toycw86" path="res://assets/models/Environement/computerMouse.glb" id="1_q50bq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8fidh"]
+points = PackedVector3Array(0.02485, 0.0153324, -0.0229004, 0.0124201, 0, 0, 0.02485, 0, -0.0229004, 0.02485, 0.023572, -0.0595543, -0.02485, 0.0153324, -0.0229004, -0.0124299, 0, 0, 0.02485, 0, -0.0595543, 0.0243246, 0.023572, -0.0660771, -0.02485, 0.023572, -0.0595543, -0.02485, 0, -0.0229004, 0.0243246, 0, -0.0660771, 0.0220235, 0.023572, -0.0722166, -0.0243295, 0.023572, -0.0660771, -0.02485, 0, -0.0595543, 0.0220235, 0, -0.0722166, 0.0181024, 0.023572, -0.0775314, -0.0243295, 0, -0.0660771, -0.0220283, 0.023572, -0.0722166, 0.0181024, 0, -0.0775314, 0.012858, 0.023572, -0.0816383, -0.0220283, 0, -0.0722166, -0.0181121, 0.023572, -0.0775314, 0.012858, 0, -0.0816383, 0.00667467, 0.023572, -0.0842208, -0.0181121, 0, -0.0775314, -0.0128677, 0.023572, -0.0816383, 0.00667467, 0, -0.0842208, -4.86523e-06, 0.023572, -0.0851038, -0.0128677, 0, -0.0816383, -0.00667953, 0.023572, -0.0842208, -4.86523e-06, 0, -0.0851038, -0.00667953, 0, -0.0842208)
+
+[node name="computerMouse" instance=ExtResource("1_q50bq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="computerMouse(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="computerMouse(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_8fidh")

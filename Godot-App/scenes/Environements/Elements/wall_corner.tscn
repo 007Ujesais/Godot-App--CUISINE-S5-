@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt3tuook4xdjj"]
+
+[ext_resource type="PackedScene" uid="uid://c8iwmhpwxgr8i" path="res://assets/models/Environement/wallCorner.glb" id="1_fe65c"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fxwnv"]
+points = PackedVector3Array(0, -9.02389e-17, -0.0500147, 0, -9.02389e-17, 0, 0, 1.28953, -0.0500147, 0.499985, -9.02389e-17, -0.55, 0.449971, -9.02389e-17, 0, 0, 1.28953, 0, 0.499985, 1.28953, -0.55, 0.55, -9.02389e-17, -0.55, 0.55, -9.02389e-17, -0.100029, 0.449971, 1.28953, 0, 0.55, 1.28953, -0.55, 0.55, 1.28953, -0.100029)
+
+[node name="wallCorner" instance=ExtResource("1_fe65c")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wallCorner(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallCorner(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_fxwnv")

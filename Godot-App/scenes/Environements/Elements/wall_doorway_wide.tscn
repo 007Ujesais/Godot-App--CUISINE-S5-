@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://5xbs8dk47pv1"]
+
+[ext_resource type="PackedScene" uid="uid://ub1ae2ullnl6" path="res://assets/models/Environement/wallDoorwayWide.glb" id="1_1pc5y"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nb2dl"]
+points = PackedVector3Array(0, -2.13694e-16, -0.0500049, 0.0422866, -2.13694e-16, -0.06955, 0, -2.13694e-16, -3.8594e-06, 0, 1.28953, -0.0500049, 0.957615, -2.13694e-16, -0.06955, 0.0422866, 1.00943, -0.06955, 0.0422866, -2.13694e-16, 0.01955, 0, 1.28953, -3.8594e-06, 1, 1.28953, -0.0500049, 1, -2.13694e-16, -0.0500049, 0.957615, 1.00943, -0.06955, 0.957615, -2.13694e-16, 0.01955, 0.0422866, 1.00943, 0.01955, 1, 1.28953, -3.8594e-06, 1, -2.13694e-16, -3.8594e-06, 0.957615, 1.00943, 0.01955)
+
+[node name="wallDoorwayWide" instance=ExtResource("1_1pc5y")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wallDoorwayWide(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallDoorwayWide(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_nb2dl")

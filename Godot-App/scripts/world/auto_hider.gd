@@ -1,4 +1,4 @@
-extends CSGBox3D
+extends MeshInstance3D
 
 var layer = 0
 

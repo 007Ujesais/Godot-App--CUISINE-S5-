@@ -25,6 +25,7 @@ func open(recipes:Array[Recipe], inventory: Inventory):
 	_on_recipe_list_item_selected(0)
 
 func _on_recipe_list_item_selected(index: int) -> void:
+	recipe_list.select(index)
 	_selected_recipe = recipe_list.get_item_metadata(index)
 	ingredient_container.display(_selected_recipe.ingredients)
 	result_container.display(_selected_recipe.results)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://buwxjmrv6wfho"]
+
+[ext_resource type="PackedScene" uid="uid://cw8vxalu6tf0t" path="res://assets/models/Environement/loungeSofaOttoman.glb" id="1_wi3rw"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ixd33"]
+points = PackedVector3Array(0.909829, 0.23, 0.41, 0.47, 0.23, 0.41, 0.909829, 0.13999, 0.41, 0.909829, 0.23, -0.04, 0.47, 0.13999, 0.41, 0.47, 0.23, -0.04, 0.889809, 0, 0.389958, 0.909829, 0.13999, -0.04, 0.489977, 0, 0.389958, 0.47, 0.13999, -0.04, 0.889809, 0, -0.020002, 0.489977, 0, -0.020002)
+
+[node name="loungeSofaOttoman" instance=ExtResource("1_wi3rw")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="loungeSofaOttoman(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="loungeSofaOttoman(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ixd33")

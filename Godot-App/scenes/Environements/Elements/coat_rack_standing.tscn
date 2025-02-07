@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyd5aj6pbkrrx"]
+
+[ext_resource type="PackedScene" uid="uid://bcpbbknfc4dan" path="res://assets/models/Environement/coatRackStanding.glb" id="1_dhyxs"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_385o7"]
+points = PackedVector3Array(-0.1364, 3.07769e-29, -0.020428, -0.020428, 3.07769e-29, -0.1364, -0.1364, 3.07769e-29, 0.0203746, -0.122408, 0.623778, -0.0102006, 0.0203746, 3.07769e-29, -0.1364, -0.0102006, 0.623778, -0.122408, -0.020428, 3.07769e-29, 0.1364, -0.122408, 0.623778, 0.0101739, -0.108816, 0.756358, -0.0104143, 0.1364, 3.07769e-29, -0.020428, 0.0101739, 0.623778, -0.122408, -0.0102006, 0.756358, -0.108816, 0.0203746, 3.07769e-29, 0.1364, -0.0102006, 0.623778, 0.122381, -0.108816, 0.756358, 0.0101739, -0.0952237, 0.77, -0.0104143, 0.1364, 3.07769e-29, 0.0203746, 0.122381, 0.623778, -0.0102006, 0.0101739, 0.756358, -0.108816, -0.0102006, 0.77, -0.0952237, 0.0101739, 0.623778, 0.122381, -0.0102006, 0.756358, 0.108789, -0.0952237, 0.77, 0.0101739, 0.122381, 0.623778, 0.0101739, 0.108789, 0.756358, -0.0102006, 0.0101739, 0.77, -0.0952237, 0.0101739, 0.756358, 0.108789, -0.0102006, 0.77, 0.0951969, 0.108789, 0.756358, 0.0101739, 0.0951969, 0.77, -0.0102006, 0.0101739, 0.77, 0.0951969, 0.0951969, 0.77, 0.0101739)
+
+[node name="coatRackStanding" instance=ExtResource("1_dhyxs")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coatRackStanding(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coatRackStanding(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_385o7")

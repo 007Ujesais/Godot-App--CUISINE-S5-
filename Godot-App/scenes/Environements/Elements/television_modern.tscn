@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkr07u1vbpqid"]
+
+[ext_resource type="PackedScene" uid="uid://bmdhlcgcb4bqu" path="res://assets/models/Environement/televisionModern.glb" id="1_cv1lf"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8w2v8"]
+points = PackedVector3Array(0.3424, 0.45475, 0.0267458, 0.176496, 0, 0.0641874, 0.3424, 0.0695301, 0.0267458, 0.3424, 0.45475, -0.00404706, -0.3424, 0.45475, 0.0267458, 0.176496, 0, -0.0642, -0.176563, 0, 0.0641874, 0.3424, 0.0695301, -0.00404706, 0.0347226, 0.218072, -0.0415013, -0.3424, 0.45475, -0.00404706, -0.3424, 0.0695301, 0.0267458, -0.176563, 0, -0.0642, -0.0347897, 0.218072, -0.0415013, -0.3424, 0.0695301, -0.00404706)
+
+[node name="televisionModern" instance=ExtResource("1_cv1lf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="televisionModern(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="televisionModern(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_8w2v8")

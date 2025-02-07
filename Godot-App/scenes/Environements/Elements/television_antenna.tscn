@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc6ja4vecnwpi"]
+
+[ext_resource type="PackedScene" uid="uid://de7sptxc706ms" path="res://assets/models/Environement/televisionAntenna.glb" id="1_jvx1f"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bxwjd"]
+points = PackedVector3Array(0.122114, 0.102734, -0.0316993, 0.132264, 0.0877304, -0.0258496, 0.122114, 0.102734, -0.0483164, -0.122165, 0.102734, -0.0316993, 0.0346196, 0, -0.0200078, 0.132264, 0.0877304, -0.0541582, -0.132264, 0.0877304, -0.0258496, -2.58982e-05, 0, 0, -0.122165, 0.102734, -0.0483164, 0.0346196, 0, -0.0600078, -2.58982e-05, 0, -0.08, -0.132264, 0.0877304, -0.0541582, -0.0346455, 0, -0.0200078, -0.0346455, 0, -0.0600078)
+
+[node name="televisionAntenna" instance=ExtResource("1_jvx1f")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="televisionAntenna(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="televisionAntenna(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_bxwjd")

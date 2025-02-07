@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqg0a155aovui"]
+
+[ext_resource type="PackedScene" uid="uid://cti242gtrqohi" path="res://assets/models/Environement/wallWindowSlide.glb" id="1_173gk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sqir8"]
+points = PackedVector3Array(0, 0, -0.0500049, 0, 0, -3.8594e-06, 0, 1.28953, -0.0500049, 0.262921, 0.342958, -0.06955, 1, 0, -0.0500049, 1, 0, -3.8594e-06, 0.262921, 0.342958, 0.01955, 0, 1.28953, -3.8594e-06, 1, 1.28953, -0.0500049, 0.262921, 1.1065, -0.06955, 0.736981, 0.342958, -0.06955, 1, 1.28953, -3.8594e-06, 0.736981, 0.342958, 0.01955, 0.262921, 1.1065, 0.01955, 0.736981, 1.1065, -0.06955, 0.736981, 1.1065, 0.01955)
+
+[node name="wallWindowSlide" instance=ExtResource("1_173gk")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wallWindowSlide(Clone)" index="2"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallWindowSlide(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_sqir8")

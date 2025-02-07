@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmg6kdjp6p8ys"]
+
+[ext_resource type="PackedScene" uid="uid://dcqlqn3dn20ls" path="res://assets/models/Environement/paneling.glb" id="1_5fbfm"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cqj7i"]
+points = PackedVector3Array(0, 0, 0, 0.5, 0, 0, 0, 0, 0.019998, 0, 0.594766, 0, 0.5, 0, 0.019998, 0.5, 0.594766, 0, 0, 0.554478, 0.03, 0, 0.594766, 0.0149971, 0.5, 0.554478, 0.03, 0.5, 0.594766, 0.0149971, 0, 0.579745, 0.03, 0.5, 0.579745, 0.03)
+
+[node name="paneling" instance=ExtResource("1_5fbfm")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="paneling(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="paneling(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_cqj7i")

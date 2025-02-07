@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi7pmjdubc4nq"]
+
+[ext_resource type="PackedScene" uid="uid://d3pd7gyw80p1r" path="res://assets/models/Environement/lampWall.glb" id="1_f6bcl"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mt0ds"]
+points = PackedVector3Array(-0.195375, 0.16, 0, -0.138576, 0, 0, -0.195375, 0.16, 0.129575, 0.195375, 0.16, 0, -0.138576, 0, 0.0799724, 0.138537, 0, 0, -3.82513e-05, 0.16, 0.2592, 0.195375, 0.16, 0.129575, -3.82513e-05, 0, 0.159996, 0.138537, 0, 0.0799724)
+
+[node name="lampWall" instance=ExtResource("1_f6bcl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lampWall(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lampWall(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_mt0ds")

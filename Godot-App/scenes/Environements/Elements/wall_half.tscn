@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5nb1ydo2lhmg"]
+
+[ext_resource type="PackedScene" uid="uid://bol8doestcpq8" path="res://assets/models/Environement/wallHalf.glb" id="1_67jvy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_87og2"]
+points = PackedVector3Array(0, 0, -0.05, 0, 0, 0, 0, 1.28953, -0.05, 0.5, 0, -0.05, 0.5, 0, 0, 0, 1.28953, 0, 0.5, 1.28953, -0.05, 0.5, 1.28953, 0)
+
+[node name="wallHalf" instance=ExtResource("1_67jvy")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wallHalf(Clone)" index="0"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallHalf(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_87og2")

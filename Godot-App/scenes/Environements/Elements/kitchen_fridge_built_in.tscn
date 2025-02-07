@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5gk54l4jsjji"]
+
+[ext_resource type="PackedScene" uid="uid://dmsvji4n0f576" path="res://assets/models/Environement/kitchenFridgeBuiltIn.glb" id="1_flbdi"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ehhji"]
+points = PackedVector3Array(0, 0, -0.45, 0.43, 0, -0.45, 0, 0, -0.0400352, 0, 0.868663, -0.45, 0.43, 0, -0.0400352, 0.43, 0.868663, -0.45, 0, 0.058166, -0.02, 0, 0.868663, -0.02, 0.43, 0.058166, -0.02, 0.43, 0.868663, -0.02)
+
+[node name="kitchenFridgeBuiltIn" instance=ExtResource("1_flbdi")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="kitchenFridgeBuiltIn(Clone)" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="kitchenFridgeBuiltIn(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ehhji")

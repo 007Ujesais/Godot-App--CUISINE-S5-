@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwwhpxwg7lp1w"]
+
+[ext_resource type="PackedScene" uid="uid://b7ny21g1ncqkt" path="res://assets/models/Environement/bathroomMirror.glb" id="1_gkmcd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hkefe"]
+points = PackedVector3Array(0, 4.444e-15, -0.0488, 0.30134, 4.444e-15, -0.0488, 0, 4.444e-15, -0.0244035, 0, 0.40761, -0.0488, 0.30134, 4.444e-15, -0.0244035, 0.30134, 0.40761, -0.0488, 0, 0.0199955, 0.0956, 0, 0.40761, -0.0244035, 0.0908504, 0.434625, -0.0488, 0.30134, 0.0199955, 0.0956, 0.21046, 0.434625, -0.0488, 0.30134, 0.40761, -0.0244035, 0, 0.0357366, 0.0956, 0.0908504, 0.434625, -0.0244035, 0.30134, 0.0357366, 0.0956, 0.21046, 0.434625, -0.0244035)
+
+[node name="bathroomMirror" instance=ExtResource("1_gkmcd")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bathroomMirror(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bathroomMirror(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_hkefe")

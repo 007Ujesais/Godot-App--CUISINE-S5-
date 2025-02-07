@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://3bad0r80r1dn"]
+
+[ext_resource type="PackedScene" uid="uid://cjddfugjgjbbk" path="res://assets/models/Environement/stairs.glb" id="1_si2ai"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8yh6y"]
+points = PackedVector3Array(1.82326, 1.33953, -7.73072e-05, 1.82326, 1.30898, -7.73072e-05, 1.82326, 1.33953, -0.79, 1.63941, 1.33953, -7.73072e-05, 1.82326, 1.23192e-15, -0.0200284, 1.6594, 1.18717, -7.73072e-05, 1.82326, 1.30898, -0.79, 1.63941, 1.33953, -0.79, 1.47538, 1.21772, -7.73072e-05, 1.82326, 1.23192e-15, -0.770049, 0.675756, 0.456563, -7.73072e-05, 0.347873, 0.213072, -7.73072e-05, 0.183843, 0.0912602, -7.73072e-05, 0.0199907, 1.23192e-15, -0.0200284, 1.6594, 1.18717, -0.79, 1.47538, 1.21772, -0.79, 0.327704, 0.365303, -7.73072e-05, 0.0199907, 1.23192e-15, -0.770049, 0.183843, 0.0912602, -0.79, 0.347873, 0.213072, -0.79, 0.675756, 0.456563, -0.79, 0, 0.0912602, -7.73072e-05, 0.327704, 0.365303, -0.79, 0, 0.12168, -7.73072e-05, 0, 0.0912602, -0.79, 0, 0.12168, -0.79)
+
+[node name="stairs" instance=ExtResource("1_si2ai")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stairs(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stairs(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_8yh6y")

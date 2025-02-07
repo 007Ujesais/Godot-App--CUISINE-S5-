@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8odk1uaghifu"]
+
+[ext_resource type="PackedScene" uid="uid://cb4uxavvkraeg" path="res://assets/models/Environement/doorwayFront.glb" id="1_dj6iq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ggty1"]
+points = PackedVector3Array(0, 0, -0.0891, 0, 0, -8.71718e-06, 0, 1.00953, -0.0891, 0.485952, 0, -0.0891, 0.485952, 0, -8.71718e-06, 0, 1.00953, -8.71718e-06, 0.485952, 1.00953, -0.0891, 0.485952, 1.00953, -8.71718e-06)
+
+[node name="doorwayFront" instance=ExtResource("1_dj6iq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doorwayFront(Clone)" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorwayFront(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ggty1")

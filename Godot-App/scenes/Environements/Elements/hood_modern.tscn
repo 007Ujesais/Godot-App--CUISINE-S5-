@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://828ye54fiili"]
+
+[ext_resource type="PackedScene" uid="uid://cj7sf4schrqds" path="res://assets/models/Environement/hoodModern.glb" id="1_3xekb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c3fa5"]
+points = PackedVector3Array(0.309957, 0.369532, -0.20001, 0.43, 0.0599885, 0, 0.309957, 0.369532, -0.2849, 0.119959, 0.369532, -0.20001, 0.43, -4.29451e-05, 0, 0.43, 0.0599885, -0.2849, -1.44382e-15, 0.0599885, 0, 0.119959, 0.369532, -0.2849, 0.43, -0.03, -0.2849, -1.44382e-15, -4.29451e-05, 0, -1.44382e-15, 0.0599885, -0.2849, -1.44382e-15, -0.03, -0.2849)
+
+[node name="hoodModern" instance=ExtResource("1_3xekb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hoodModern(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hoodModern(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_c3fa5")

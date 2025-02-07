@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ocxb1mkwg4h6"]
+
+[ext_resource type="PackedScene" uid="uid://b6uiu8xf8wi67" path="res://assets/models/Environement/loungeSofa.glb" id="1_tpobb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1echd"]
+points = PackedVector3Array(0.884839, 0.46, -0.319861, 0.98, 0.36999, -0.0600392, 0.884839, 0.46, -0.41, 0.0950646, 0.46, -0.319861, 0.98, 0.329961, -0.0200264, 0.98, 0.36999, -0.41, 0, 0.36999, -0.0600392, 0.0950646, 0.46, -0.41, 0.889828, 0.229955, 0, 0.98, 0, -0.0200264, 0, 0.329961, -0.0200264, 0.98, 0, -0.41, 0, 0.36999, -0.41, 0.889828, 0.144808, 0, 0.0900763, 0.229955, 0, 0, 0, -0.0200264, 0, 0, -0.41, 0.0900763, 0.144808, 0)
+
+[node name="loungeSofa" instance=ExtResource("1_tpobb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="loungeSofa(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="loungeSofa(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_1echd")

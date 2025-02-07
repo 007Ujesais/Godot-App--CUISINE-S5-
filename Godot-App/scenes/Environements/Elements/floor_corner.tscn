@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4dpehqm5ohrk"]
+
+[ext_resource type="PackedScene" uid="uid://dfohav31e2pjr" path="res://assets/models/Environement/floorCorner.glb" id="1_s0iar"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4lw0y"]
+points = PackedVector3Array(0, -5.63993e-18, -0.55, 0, -5.63993e-18, 0, 0, 0.05, -0.55, 0.55, -5.63993e-18, -0.55, 0.449971, -5.63993e-18, 0, 0, 0.05, 0, 0.55, 0.05, -0.55, 0.55, -5.63993e-18, -0.100029, 0.449971, 0.05, 0, 0.55, 0.05, -0.100029)
+
+[node name="floorCorner" instance=ExtResource("1_s0iar")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floorCorner(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floorCorner(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_4lw0y")

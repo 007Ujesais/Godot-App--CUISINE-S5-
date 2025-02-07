@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://buqq14iiv1184"]
+
+[ext_resource type="PackedScene" uid="uid://dmtgofcnwq8lr" path="res://assets/models/Environement/trashcan.glb" id="1_mm1lq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r1cm4"]
+points = PackedVector3Array(-0.259491, -5.30948e-18, -0.0985435, -0.259491, -5.30948e-18, 0.0985004, -0.259491, 0.0574065, -0.0985435, -3.62992e-05, -5.30948e-18, -0.22, -3.62992e-05, -5.30948e-18, 0.22, -0.259491, 0.0574065, 0.0985004, -0.190549, 0.837407, -0.110043, -3.62992e-05, 0.837407, -0.22, 0.236503, 0.726498, -0.0946241, 0.190525, -5.30948e-18, -0.110043, 0.190525, -5.30948e-18, 0.109957, 0.236503, 0.726498, 0.0945811, -3.62992e-05, 0.837407, 0.22, -0.190549, 0.837407, 0.109957, -0.12957, 0.906348, -0.0748121, -3.62992e-05, 0.906348, -0.149624, 0.190477, 0.837407, -0.110043, 0.236503, 0.775919, -0.0946241, 0.236503, 0.775919, 0.0945811, 0.190477, 0.837407, 0.109957, 0.129545, 0.906348, 0.074769, -3.62992e-05, 0.906348, 0.149581, -0.12957, 0.906348, 0.074769, 0.129545, 0.906348, -0.0748121)
+
+[node name="trashcan" instance=ExtResource("1_mm1lq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="trashcan(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trashcan(Clone)/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_r1cm4")

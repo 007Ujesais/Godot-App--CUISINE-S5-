@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwfr8ql4hc3qd"]
+
+[ext_resource type="PackedScene" uid="uid://bps02tu5wjvoy" path="res://assets/models/Environement/rugRectangle.glb" id="1_s5ndd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fl0h3"]
+points = PackedVector3Array(0, 0, -0.92, 0, 0, 0, 0, 0.01, -0.92, 1.57, 0, -0.92, 0, 0.01, 0, 1.57, 0, 0, 1.57, 0.01, -0.92, 1.57, 0.01, 0)
+
+[node name="rugRectangle" instance=ExtResource("1_s5ndd")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rugRectangle(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rugRectangle(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_fl0h3")

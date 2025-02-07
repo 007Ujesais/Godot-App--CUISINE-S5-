@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfvelibb083d7"]
+
+[ext_resource type="PackedScene" uid="uid://cthe6m5os810v" path="res://assets/models/Environement/computerScreen.glb" id="1_7oe1t"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jf40s"]
+points = PackedVector3Array(0.392688, 0.294285, -0.0649923, 0.266417, -8.01483e-32, 0, 0.392688, 0.0494604, -0.0305822, 0.392688, 0.2908, -0.0896902, -1.44382e-15, 0.294285, -0.0649923, 0.266417, -8.01483e-32, -0.104004, 0.392688, 0.0460037, -0.0552801, 0.110011, -8.01483e-32, 0, -1.44382e-15, 0.2908, -0.0896902, -1.44382e-15, 0.0494604, -0.0305822, 0.110011, -8.01483e-32, -0.104004, -1.44382e-15, 0.0460037, -0.0552801)
+
+[node name="computerScreen" instance=ExtResource("1_7oe1t")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="computerScreen(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="computerScreen(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_jf40s")

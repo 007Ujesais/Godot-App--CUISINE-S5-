@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://h6kccrki0mgt"]
+
+[ext_resource type="PackedScene" uid="uid://c6m5qahy45fob" path="res://assets/models/Environement/kitchenCabinetUpperLow.glb" id="1_bdss0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_id8vd"]
+points = PackedVector3Array(0, 0, -0.21, 0, 0, 0, 0, 0.194981, -0.21, 0.43, 0, -0.21, 0, 0.194981, 0, 0.43, 0, 0, 0.43, 0.194981, -0.21, 0.43, 0.194981, 0)
+
+[node name="kitchenCabinetUpperLow" instance=ExtResource("1_bdss0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="kitchenCabinetUpperLow(Clone)" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="kitchenCabinetUpperLow(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_id8vd")

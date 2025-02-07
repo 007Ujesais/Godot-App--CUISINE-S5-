@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 # Constantes pour la vitesse et la rotation
 const SPEED: float = 2.0
-const ROTATION_SPEED: float = 10.0
+const ROTATION_SPEED: float = 7.0
 
 # Références aux nœuds de la scène
 @onready var camera_point: Node3D = $camera_point

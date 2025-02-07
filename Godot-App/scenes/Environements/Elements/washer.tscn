@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://lwqbmaii6mwl"]
+
+[ext_resource type="PackedScene" uid="uid://ddxn55a1fltfx" path="res://assets/models/Environement/washer.glb" id="1_t8xxl"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o6d01"]
+points = PackedVector3Array(0, 0, -0.35, 0.389962, 0, -0.35, 0, 0, -0.0200078, 0, 0.47, -0.35, 0.389962, 0, -0.0200078, 0.389962, 0.47, -0.35, 0, 0.0625225, -3.42429e-05, 0, 0.47, -0.0192198, 0.389962, 0.0625225, -3.42429e-05, 0.389962, 0.47, -0.0192198, 0, 0.388983, -3.42429e-05, 0.0169117, 0.405453, -0.00390562, 0.389962, 0.388983, -3.42429e-05, 0.37305, 0.405453, -0.00390562)
+
+[node name="washer" instance=ExtResource("1_t8xxl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="washer(Clone)" index="1"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="washer(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_o6d01")

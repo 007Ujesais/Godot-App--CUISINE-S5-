@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctmmphcdy5fut"]
+
+[ext_resource type="PackedScene" uid="uid://cjlb4i6uhjpp4" path="res://assets/models/Environement/floorFull.glb" id="1_1uusa"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_abqpe"]
+points = PackedVector3Array(0, 0, -1, 0, 0.05, -1, 1, 0, -1, 0, 0, 0, 0, 0.05, 0, 1, 0.05, -1, 1, 0, 0, 1, 0.05, 0)
+
+[node name="floorFull" instance=ExtResource("1_1uusa")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floorFull(Clone)" index="0"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floorFull(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_abqpe")

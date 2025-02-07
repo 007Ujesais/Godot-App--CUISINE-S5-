@@ -1,0 +1,138 @@
+[gd_scene load_steps=19 format=3 uid="uid://bmm3cd6ymtfjm"]
+
+[ext_resource type="PackedScene" uid="uid://bwlltj5038tam" path="res://scenes/objects/Table.tscn" id="1_cyvhd"]
+[ext_resource type="MeshLibrary" uid="uid://b75634axcxj1v" path="res://assets/Mesh/Tiles.tres" id="1_gotvc"]
+[ext_resource type="Material" uid="uid://d23mm0aj88n02" path="res://materials/floor_material.tres" id="1_w33s1"]
+[ext_resource type="Material" uid="uid://bn0nf5oh3ywh4" path="res://materials/wall_material.tres" id="2_m01uf"]
+[ext_resource type="Script" path="res://scripts/world/auto_hider.gd" id="3_8itgw"]
+[ext_resource type="PackedScene" uid="uid://cpd0nbs8o8ipt" path="res://scenes/player/player.tscn" id="3_bs0p0"]
+[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/pizza.tres" id="3_sgnw1"]
+[ext_resource type="Resource" uid="uid://vwaghb07luhm" path="res://data/Items/eggplant.tres" id="4_ud350"]
+[ext_resource type="PackedScene" uid="uid://dt6rxq0rqqlk7" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
+[ext_resource type="PackedScene" uid="uid://bxa8x2t7arm8" path="res://scenes/objects/Object.tscn" id="6_ov84t"]
+[ext_resource type="PackedScene" uid="uid://c7turwwvevc5a" path="res://scenes/objects/Oven.tscn" id="7_1844x"]
+[ext_resource type="Script" path="res://scripts/Interface/ui_root.gd" id="8_0tifu"]
+[ext_resource type="PackedScene" uid="uid://buxtipcglim2h" path="res://scenes/Interface/dialog/inventory_dialog.tscn" id="8_kvvpp"]
+[ext_resource type="PackedScene" uid="uid://dp8qcil1fjge6" path="res://scenes/Interface/dialog/cooking_dialog.tscn" id="10_qe8hn"]
+[ext_resource type="Resource" uid="uid://cbdwmys1y2cma" path="res://data/all_recipes.tres" id="11_thpt7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_18m6p"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_oq3q3"]
+sky_material = SubResource("ProceduralSkyMaterial_18m6p")
+process_mode = 2
+
+[sub_resource type="Environment" id="Environment_fsndb"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_oq3q3")
+ambient_light_source = 2
+ambient_light_color = Color(0.886275, 0.827451, 1, 1)
+tonemap_mode = 2
+tonemap_exposure = 1.13
+tonemap_white = 1.7
+glow_strength = 0.07
+volumetric_fog_density = 0.005
+volumetric_fog_emission = Color(0.8, 0.952941, 1, 1)
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.821981, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.433013, -0.25, -0.12941, 0.677077, 0.724444, 0.482963, -0.595035, 0.642402, 0, 0, 0)
+layers = 3
+light_color = Color(0.972474, 0.910544, 0.89445, 1)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 10.0
+shadow_reverse_cull_face = true
+shadow_transmittance_bias = 16.0
+shadow_blur = 0.0
+directional_shadow_mode = 0
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 20.0
+directional_shadow_pancake_size = 1024.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fsndb")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_gotvc")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-720909, 65530, 1, -1179662, 65524, 0, -1245113, 65481, 0, -1245112, 65481, 0, -1245111, 65480, 0, -1245109, 65479, 0, -1245106, 65478, 0, -1179697, 65533, 1)
+}
+metadata/_editor_floor_ = Vector3(0, -4, 0)
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Table" parent="Map" instance=ExtResource("1_cyvhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34776, 1.42652, -0.819132)
+
+[node name="Plat" parent="Map" instance=ExtResource("6_ov84t")]
+transform = Transform3D(0.999996, -0.00293215, 0, 0.000758896, 0.258818, -0.965926, 0.00283224, 0.965922, 0.258819, -3.27709, 2.18181, -1.40985)
+object = ExtResource("3_sgnw1")
+
+[node name="Tomatos" parent="Map" instance=ExtResource("6_ov84t")]
+transform = Transform3D(-0.173574, 0.982726, -0.0642001, 0.0965291, -0.0478986, -0.994177, -0.980079, -0.17876, -0.0865477, -2.49358, 1.89858, -0.472229)
+object = ExtResource("4_ud350")
+
+[node name="Oven" parent="Map" instance=ExtResource("7_1844x")]
+transform = Transform3D(0.778013, 2.98023e-08, 0.628248, -0.173653, 0.96104, 0.21505, -0.603772, -0.276409, 0.747702, -2.91884, 2.4281, 1.22895)
+
+[node name="floor" type="CSGBox3D" parent="Map"]
+material_override = ExtResource("1_w33s1")
+use_collision = true
+size = Vector3(194.828, 1, 172.883)
+
+[node name="wall5" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, -1, -0.0284708, 1.9912, 2.71339)
+layers = 2
+material_override = ExtResource("2_m01uf")
+use_collision = true
+size = Vector3(0.252458, 2.99136, 2.64676)
+script = ExtResource("3_8itgw")
+
+[node name="wall6" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00431005, 1.9912, -2.34905)
+layers = 2
+material_override = ExtResource("2_m01uf")
+use_collision = true
+size = Vector3(0.208267, 2.9845, 4)
+script = ExtResource("3_8itgw")
+
+[node name="player" parent="." instance=ExtResource("3_bs0p0")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.498, 0)
+
+[node name="camera_rig" parent="." instance=ExtResource("4_wc57n")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 5, 0)
+
+[node name="UIRoot" type="CanvasLayer" parent="."]
+script = ExtResource("8_0tifu")
+all_recipes = ExtResource("11_thpt7")
+
+[node name="InventoryDialog" parent="UIRoot" instance=ExtResource("8_kvvpp")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -116.0
+offset_right = 24.0
+offset_bottom = -81.0
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="CookingDialog" parent="UIRoot" instance=ExtResource("10_qe8hn")]
+unique_name_in_owner = true
+visible = false
+offset_left = 203.0
+offset_top = 193.0
+offset_right = -203.0
+offset_bottom = -193.0
+size_flags_horizontal = 6
+size_flags_vertical = 6

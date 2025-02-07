@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwqlstvj3s5cl"]
+
+[ext_resource type="PackedScene" uid="uid://bahi2fo1tf3xi" path="res://assets/models/Environement/pillowBlue.glb" id="1_fx1t1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lnh10"]
+points = PackedVector3Array(0.200079, 0.128512, -0.0489138, 0.200079, 0.10558, -0.0189624, 0.23, 0.0996171, -0.0411762, 0.200079, 0.093667, -0.0633899, 0.0298757, 0.128512, -0.0489138, 0.0298757, 0.10558, -0.0189624, 0.200079, 0.0348326, 0, 0.23, 0.02887, -0.02222, 0.200079, 0.0229199, -0.0444338, 0.0298757, 0.093667, -0.0633899, 0, 0.0996171, -0.0411762, 0.0298757, 0.0348326, 0, 0.200079, 0, -0.0144824, 0.0298757, 0.0229199, -0.0444338, 0, 0.02887, -0.02222, 0.0298757, 0, -0.0144824)
+
+[node name="pillowBlue" instance=ExtResource("1_fx1t1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pillowBlue(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillowBlue(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_lnh10")

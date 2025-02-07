@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6gbdx6ryjixx"]
+
+[ext_resource type="PackedScene" uid="uid://1202wh7x7rwl" path="res://assets/models/Environement/plantSmall2.glb" id="1_5b6pf"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_owoje"]
+points = PackedVector3Array(-0.0946607, 0.129996, -0.0253701, -0.0253701, 0.129996, -0.0946607, -0.0676228, 0, -0.0181242, -0.0693091, 0.129996, 0.0692906, -0.0403994, 0.249988, 0.0233131, -0.0403994, 0.249988, -0.0233316, 0.0692906, 0.129996, -0.0693091, -0.0181242, 0, -0.0676228, -1.85296e-05, 0.249988, -0.0466447, -0.0495171, 0, 0.0494801, 0.0181056, 0, 0.0676042, 0.0253516, 0.129996, 0.0946607, -1.85296e-05, 0.249988, 0.0466262, -1.85296e-05, 0.269996, 0.0284464, -0.0246474, 0.269996, 0.0142139, -0.0246474, 0.269996, -0.0142325, -1.85296e-05, 0.269996, -0.0284649, 0.0946607, 0.129996, 0.0253516, 0.0676042, 0, 0.0181056, 0.0494801, 0, -0.0495171, 0.0403809, 0.249988, -0.0233316, 0.0403809, 0.249988, 0.0233131, 0.0246288, 0.269996, 0.0142139, -1.85296e-05, 0.28, -1.85296e-05, 0.0246288, 0.269996, -0.0142325)
+
+[node name="plantSmall2" instance=ExtResource("1_5b6pf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="plantSmall2(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plantSmall2(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_owoje")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmnbyq24peoqt"]
+
+[ext_resource type="PackedScene" uid="uid://cfirqtg51ctsj" path="res://assets/models/Environement/tableGlass.glb" id="1_tvn0y"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bgm2c"]
+points = PackedVector3Array(0, 0, -0.447373, 0, 0, 0, 0, 0.326734, -0.447373, 0.841488, 0, -0.447373, 0, 0.326734, 0, 0.841488, 0, 0, 0.841488, 0.326734, -0.447373, 0.841488, 0.326734, 0)
+
+[node name="tableGlass" instance=ExtResource("1_tvn0y")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tableGlass(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tableGlass(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_bgm2c")

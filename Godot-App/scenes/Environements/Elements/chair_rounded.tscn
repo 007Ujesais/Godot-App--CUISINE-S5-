@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3p1odc2ci8ne"]
+
+[ext_resource type="PackedScene" uid="uid://ctso5ckcl7pja" path="res://assets/models/Environement/chairRounded.glb" id="1_0ph8c"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7gu84"]
+points = PackedVector3Array(0, 0, -0.2, 0.2, 0, -0.2, 0, 0, 0, 0, 0.354968, -0.2, 0.2, 0, 0, 0.2, 0.354968, -0.2, 0, 0.219973, 0, 0, 0.354968, -0.160004, 0.00338684, 0.380844, -0.2, 0.2, 0.219973, 0, 0.196574, 0.380844, -0.2, 0.2, 0.354968, -0.160004, 0.0999804, 0.455, -0.160004, 0.0740995, 0.451571, -0.160004, 0.0499804, 0.441594, -0.160004, 0.0292874, 0.425694, -0.160004, 0.0133908, 0.404984, -0.160004, 0.00338684, 0.380844, -0.160004, 0.0133908, 0.404984, -0.2, 0.196574, 0.380844, -0.160004, 0.18659, 0.404984, -0.160004, 0.170693, 0.425694, -0.160004, 0.14998, 0.441594, -0.160004, 0.125861, 0.451571, -0.160004, 0.18659, 0.404984, -0.2, 0.0999804, 0.455, -0.2, 0.0740995, 0.451571, -0.2, 0.0499804, 0.441594, -0.2, 0.0292874, 0.425694, -0.2, 0.170693, 0.425694, -0.2, 0.14998, 0.441594, -0.2, 0.125861, 0.451571, -0.2)
+
+[node name="chairRounded" instance=ExtResource("1_0ph8c")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="chairRounded(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chairRounded(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_7gu84")

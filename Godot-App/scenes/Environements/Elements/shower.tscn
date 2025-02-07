@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmj5cm2a4p42d"]
+
+[ext_resource type="PackedScene" uid="uid://cexsdufxk4abc" path="res://assets/models/Environement/shower.glb" id="1_l8hec"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xffp4"]
+points = PackedVector3Array(-2.70717e-15, 0, -1.28, 1.28, 0, -1.28, -2.70717e-15, 0, 0, -2.70717e-15, 2.49243, -1.28, 1.28, 0, 0, 1.28, 2.49243, -1.28, -2.70717e-15, 2.49243, 0, 1.28, 2.49243, 0)
+
+[node name="shower" instance=ExtResource("1_l8hec")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="shower(Clone)" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shower(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_xffp4")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch1sjvu378a07"]
+
+[ext_resource type="PackedScene" uid="uid://c3atsyd3nejf2" path="res://assets/models/Environement/chairModernCushion.glb" id="1_bdphc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2pxmb"]
+points = PackedVector3Array(0, -1.11636e-17, -0.2, 0.2, -1.11636e-17, -0.2, 0, -1.11636e-17, 0, 0, 0.46, -0.2, 0.2, -1.11636e-17, 0, 0.2, 0.46, -0.2, 0, 0.239996, 0, 0, 0.46, -0.170008, 0.2, 0.239996, 0, 0.2, 0.46, -0.170008)
+
+[node name="chairModernCushion" instance=ExtResource("1_bdphc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="chairModernCushion(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chairModernCushion(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_2pxmb")

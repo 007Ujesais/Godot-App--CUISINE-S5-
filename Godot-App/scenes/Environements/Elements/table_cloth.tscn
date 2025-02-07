@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://5k7ad4vxjl6j"]
+
+[ext_resource type="PackedScene" uid="uid://djjvr2mr1ypi4" path="res://assets/models/Environement/tableCloth.glb" id="1_4bvps"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_grvv4"]
+points = PackedVector3Array(0, 0, -0.447373, 0, 0, 0, 0, 0.326734, -0.447373, 0.841488, 0, -0.447373, 0, 0.326734, 0, 0.841488, 0, 0, 0.841488, 0.326734, -0.447373, 0.841488, 0.326734, 0)
+
+[node name="tableCloth" instance=ExtResource("1_4bvps")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tableCloth(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tableCloth(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_grvv4")

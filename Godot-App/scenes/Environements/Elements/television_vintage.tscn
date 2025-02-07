@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tph335dpe8i1"]
+
+[ext_resource type="PackedScene" uid="uid://c1ahttsa2ff8e" path="res://assets/models/Environement/televisionVintage.glb" id="1_7nhni"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p7tfk"]
+points = PackedVector3Array(0.41, 0.27, 0, 0.41, 0.230673, 0, 0.41, 0.27, -0.200016, 0, 0.27, 0, 0.41, 0, -0.0100166, 0.301962, 0, 0, 0.41, 0, -0.200016, 0.334269, 0.231916, -0.25002, 0.254203, 0.231916, -0.27, 0, 0.27, -0.200016, 0, 0, 0, 0.334269, 0.0380579, -0.25002, 0, 0, -0.200016, 0.254203, 0.108122, -0.27, 0.155757, 0.231916, -0.27, 0.0756911, 0.231916, -0.25002, 0.0756911, 0.0380579, -0.25002, 0.155757, 0.108122, -0.27)
+
+[node name="televisionVintage" instance=ExtResource("1_7nhni")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="televisionVintage(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="televisionVintage(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_p7tfk")

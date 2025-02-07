@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsj47pkbbnq52"]
+
+[ext_resource type="PackedScene" uid="uid://c7ifa7oqxn10j" path="res://assets/models/Environement/kitchenStove.glb" id="1_3dsyv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_feien"]
+points = PackedVector3Array(0.43, 0.419959, 0, 0, 0.419959, 0, 0.43, 0.389962, 0, 0.43, 0.45, -0.420003, 0.383237, 0.439957, -0.117081, 0.35108, 0.434979, -0.076248, 0, 0.389962, 0, 0.0788361, 0.434979, -0.076248, 0.0467208, 0.439957, -0.117081, 0, 0.45, -0.420003, 0.43, 0.0582322, -0.0200421, 0.43, 0.45, -0.45, 0, 0.0582322, -0.0200421, 0, 0.45, -0.45, 0.43, 0, -0.0400401, 0.43, 0, -0.45, 0, 0, -0.0400401, 0, 0, -0.45)
+
+[node name="kitchenStove" instance=ExtResource("1_3dsyv")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="kitchenStove(Clone)" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="kitchenStove(Clone)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_feien")
