@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3yn64m17v75u"]
+[gd_scene load_steps=16 format=3 uid="uid://d3yn64m17v75u"]
 
 [ext_resource type="MeshLibrary" uid="uid://b75634axcxj1v" path="res://assets/Mesh/Tiles.tres" id="1_8xrbj"]
 [ext_resource type="Script" path="res://scenes/Game/Game.gd" id="1_eg2xg"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dp8qcil1fjge6" path="res://scenes/Interface/dialog/cooking_dialog.tscn" id="7_rrrlp"]
 [ext_resource type="Shader" path="res://scenes/Game/World.gdshader" id="8_5pd00"]
 [ext_resource type="Texture2D" uid="uid://bkp4gorj58xq6" path="res://assets/Themes/Rectangle 604.png" id="9_hkxwd"]
+[ext_resource type="PackedScene" uid="uid://uteod4o0xoix" path="res://scenes/Interface/Sound/install_sounds.tscn" id="11_ufksp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q7uef"]
 sky_top_color = Color(0.00398195, 0.215173, 0.872429, 1)
@@ -181,3 +182,12 @@ offset_right = -203.0
 offset_bottom = -193.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
+
+[node name="UX" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InstallSounds" parent="UX" instance=ExtResource("11_ufksp")]
+root_path = NodePath("../../UI")

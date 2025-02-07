@@ -7,7 +7,8 @@ const ROTATION_SPEED: float = 7.0
 
 # Références aux nœuds de la scène
 @onready var camera_point: Node3D = $camera_point
-@onready var animation_player: AnimationPlayer = $Visuals/player/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Visuals/Character/Armature/AnimationPlayer
+
 @onready var visuals: Node3D = $Visuals
 
 # Récupération de la gravité du projet
