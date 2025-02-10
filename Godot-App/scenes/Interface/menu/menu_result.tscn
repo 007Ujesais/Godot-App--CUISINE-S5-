@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl7io0ojj58bp"]
+
+[ext_resource type="Theme" uid="uid://2mlbwil144rn" path="res://assets/Themes/Loading.tres" id="1_hqfo6"]
+[ext_resource type="Texture2D" uid="uid://bkp4gorj58xq6" path="res://assets/Themes/Rectangle 604.png" id="2_coiis"]
+[ext_resource type="Script" path="res://scripts/Interface/menu/menu_resulat.gd" id="2_t2yga"]
+[ext_resource type="PackedScene" uid="uid://ke2aldt5v8lo" path="res://scenes/Interface/timer_container.tscn" id="4_tlbqr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_71xti"]
+texture = ExtResource("2_coiis")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0, 0.972549, 0.0823529, 1)
+
+[node name="ResultControl" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_hqfo6")
+script = ExtResource("2_t2yga")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.300269, 0.360758, 0.498692, 0.976471)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/fill = SubResource("StyleBoxTexture_71xti")
+
+[node name="TimerContainer" parent="HBoxContainer/VBoxContainer" instance=ExtResource("4_tlbqr")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainerButtonResultMenu" type="HBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button_Add" type="Button" parent="HBoxContainer/HBoxContainerButtonResultMenu"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue"
+
+[node name="Button_Cook" type="Button" parent="HBoxContainer/HBoxContainerButtonResultMenu"]
+unique_name_in_owner = true
+self_modulate = Color(0.968627, 0.8, 0.8, 0.823529)
+layout_mode = 2
+text = "Cook"
+
+[connection signal="pressed" from="HBoxContainer/HBoxContainerButtonResultMenu/Button_Add" to="." method="_on_button_add_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainerButtonResultMenu/Button_Cook" to="." method="_on_button_cook_pressed"]

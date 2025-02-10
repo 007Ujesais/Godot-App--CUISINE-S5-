@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://vwaghb07luhm"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_m255j"]
+[ext_resource type="Texture2D" uid="uid://c88muk4q7bw55" path="res://assets/Icons/Food/tomato.png" id="2_kqib7"]
+[ext_resource type="PackedScene" uid="uid://ckemcevy2kmwa" path="res://assets/models/Food/tomato.glb" id="3_1ty48"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="5_s3o86"]
+
+[resource]
+script = ExtResource("5_s3o86")
+scene = ExtResource("3_1ty48")
+icon = ExtResource("2_kqib7")
+name = "Tomate"
+Actions = Array[ExtResource("1_m255j")]([])

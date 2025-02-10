@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://c43x4cgdwt44m"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_fvha3"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="2_gxa7x"]
+[ext_resource type="Texture2D" uid="uid://dsppfhf710d3" path="res://assets/Icons/Food/bread.png" id="2_snfsc"]
+[ext_resource type="PackedScene" uid="uid://cp2olovgobo2x" path="res://assets/models/Food/bread.glb" id="3_35vcr"]
+
+[resource]
+script = ExtResource("2_gxa7x")
+scene = ExtResource("3_35vcr")
+icon = ExtResource("2_snfsc")
+name = "Pain"
+Actions = Array[ExtResource("1_fvha3")]([])

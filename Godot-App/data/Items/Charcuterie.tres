@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://c15qedsckh6s4"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_f0ha4"]
+[ext_resource type="Texture2D" uid="uid://c8u0dw6htiqco" path="res://assets/Icons/Food/sausage-half.png" id="2_bxj0u"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="2_m5gm2"]
+[ext_resource type="PackedScene" uid="uid://347xftuag62t" path="res://assets/models/Food/sausage-half.glb" id="3_4l8t7"]
+
+[resource]
+script = ExtResource("2_m5gm2")
+scene = ExtResource("3_4l8t7")
+icon = ExtResource("2_bxj0u")
+name = "Charcuterie"
+Actions = Array[ExtResource("1_f0ha4")]([])

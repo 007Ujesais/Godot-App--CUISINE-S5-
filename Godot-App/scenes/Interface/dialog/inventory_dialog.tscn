@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://buxtipcglim2h"]
 
-[ext_resource type="Theme" uid="uid://8acqlvt26tng" path="res://assets/Themes/Inventory_dialog.tres" id="1_ayjp7"]
+[ext_resource type="Theme" uid="uid://dxhgocvbo582" path="res://assets/Themes/Cooking_dialog.tres" id="1_m3h75"]
 [ext_resource type="Script" path="res://scripts/Interface/dialog/inventory_dialog.gd" id="1_vqm52"]
-[ext_resource type="PackedScene" uid="uid://c4la7eogbeytj" path="res://scenes/Interface/item_slot.tscn" id="2_2q52m"]
 [ext_resource type="PackedScene" uid="uid://dl0dc2ub8svvk" path="res://scenes/Interface/item_grid.tscn" id="3_nfh7o"]
+[ext_resource type="Texture2D" uid="uid://fqnnkml4lphe" path="res://assets/Icons/SVG/cross_small.svg" id="4_dnenw"]
 
 [node name="InventoryDialog" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0.392157)
@@ -12,9 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ayjp7")
+theme = ExtResource("1_m3h75")
 script = ExtResource("1_vqm52")
-slot_scene = ExtResource("2_2q52m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -26,10 +25,16 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 0
-text = "close"
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_icons/icon = ExtResource("4_dnenw")
+icon = ExtResource("4_dnenw")
 
 [node name="GridContainer" parent="VBoxContainer" instance=ExtResource("3_nfh7o")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/closeButton" to="." method="_on_close_button_pressed"]

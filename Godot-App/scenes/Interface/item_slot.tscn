@@ -1,48 +1,87 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4la7eogbeytj"]
+[gd_scene load_steps=4 format=3 uid="uid://c4la7eogbeytj"]
 
 [ext_resource type="Theme" uid="uid://0fpkee3b2xe" path="res://assets/Themes/Cards_items.tres" id="1_la6d0"]
 [ext_resource type="Script" path="res://scripts/Interface/item_slot.gd" id="1_olk34"]
-
-[sub_resource type="Gradient" id="Gradient_b3c5c"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qmgey"]
-gradient = SubResource("Gradient_b3c5c")
-height = 130
+[ext_resource type="Theme" uid="uid://6t1dhhp66lq2" path="res://assets/Themes/Cooking_button.tres" id="3_tujn6"]
 
 [node name="PanelContainer" type="PanelContainer"]
-layout_direction = 1
-offset_right = 201.0
-offset_bottom = 212.0
+custom_minimum_size = Vector2(154, 100)
+layout_direction = 2
+offset_right = 154.0
+offset_bottom = 194.0
 theme = ExtResource("1_la6d0")
 script = ExtResource("1_olk34")
 
 [node name="VBoxContainer" type="GridContainer" parent="."]
-custom_minimum_size = Vector2(0, 54)
 layout_mode = 2
 size_flags_vertical = 13
 size_flags_stretch_ratio = 0.0
 theme_override_constants/h_separation = 49
-theme_override_constants/v_separation = 12
+theme_override_constants/v_separation = 7
 
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/VBoxContainer"]
 self_modulate = Color(0.942057, 0.959703, 0.967251, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/PanelContainer2"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(49, 0)
+clip_contents = true
+custom_minimum_size = Vector2(20, 107)
 layout_mode = 2
-texture = SubResource("GradientTexture2D_qmgey")
+stretch_mode = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-self_modulate = Color(0, 0.972549, 0.0823529, 1)
+[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/PanelContainer"]
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelName" type="Label" parent="VBoxContainer/VBoxContainer/ButtonContainer/PanelContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.27451, 0.266667, 0.313726, 1)
+theme_override_font_sizes/font_size = 14
 text = "Name"
+horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tujn6")
+text = "Take"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/VBoxContainer2/HBoxContainer"]
+self_modulate = Color(0.276391, 0.266568, 0.313646, 1)
+layout_mode = 2
+
+[node name="LabelQuantity" type="Label" parent="VBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "01"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/HBoxContainer/Button" to="." method="_on_button_pressed"]

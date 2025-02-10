@@ -3,11 +3,16 @@ extends CharacterBody3D
 
 # Constantes pour la vitesse et la rotation
 const SPEED: float = 2.0
-const ROTATION_SPEED: float = 7.0
+const ROTATION_SPEED: float = 10.0
 
 # Références aux nœuds de la scène
-@onready var camera_point: Node3D = $camera_point
-@onready var animation_player: AnimationPlayer = $Visuals/Character/Armature/AnimationPlayer
+var camera_point: Node3D
+
+@onready var camera_point_1: Node3D = %camera_point1
+@onready var camera_point_2: Node3D = %camera_point2
+@onready var camera_point_3: Node3D = %camera_point3
+
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 @onready var visuals: Node3D = $Visuals
 
@@ -19,17 +24,28 @@ var walking: bool = false
 var can_interact_object: bool = false
 
 # Inventaire
-var inventory: Inventory = Inventory.new()
+@export var inventory: Inventory
 
 # Objets à proximité
 var nearby_object: Objects = null
+var curent_basin: Basin = null
+var curent_source: Source = null
 var node_object: Node3D = null
 
 func _ready():
+	set_camera_point_1()
 	GameManager.set_player(self)
+	animation_player.play("idle2")
 	# Ajout des transitions fluides entre les animations
-	animation_player.set_blend_time("idle", "walk", 0.3)
-	animation_player.set_blend_time("walk", "idle", 0.3)
+	animation_player.set_blend_time("idle2", "walk2", 0.3)
+	animation_player.set_blend_time("walk2", "idle2", 0.3)
+	
+	animation_player.set_blend_time("idle2", "cooking", 0.3)
+	animation_player.set_blend_time("cooking", "idle2", 0.3)
+	
+	animation_player.set_blend_time("cooking", "walk2", 0.3)
+	animation_player.set_blend_time("walk2", "cooking", 0.3)
+	
 
 func _physics_process(delta: float):
 	_apply_gravity(delta)
@@ -37,6 +53,15 @@ func _physics_process(delta: float):
 	_handle_interaction()
 
 	move_and_slide()
+
+func set_camera_point_1():
+	camera_point = camera_point_1
+
+func set_camera_point_2():
+	camera_point = camera_point_2
+	
+func set_camera_point_3():
+	camera_point = camera_point_3
 
 # Applique la gravité si le joueur n'est pas au sol
 func _apply_gravity(delta: float):
@@ -65,7 +90,7 @@ func _handle_movement(delta: float):
 		# Lancement de l'animation de marche si nécessaire
 		if not walking:
 			walking = true
-			animation_player.play("walk")
+			animation_player.play("walk2")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -73,24 +98,25 @@ func _handle_movement(delta: float):
 		# Retour à l'animation d'idle si le joueur s'arrête
 		if walking:
 			walking = false
-			animation_player.play("idle")
+			animation_player.play("idle2")
 
 # Gère les interactions avec les objets
 func _handle_interaction():
-	if Input.is_action_just_pressed("interact") and nearby_object:
-		print("Interaction avec : " + nearby_object.name)
-
-		if GameInteraction.pick and not GameInteraction.drop:
-			pick_object(nearby_object)
-		elif GameInteraction.drop and not GameInteraction.pick and inventory._content.size() > 0:
-			if nearby_object is Recipe:
-				place_object(nearby_object)
-			else:
-				print("Impossible de placer cet objet ici.")
-
-	# Permet de déposer un objet même s'il n'y a rien à proximité
-	elif Input.is_action_just_pressed("interact") and GameInteraction.drop and not GameInteraction.pick and inventory._content.size() > 0 and !can_interact_object:
-		drop_all_objects()
+	#if Input.is_action_just_pressed("interact") and nearby_object:
+		#print("Interaction avec : " + nearby_object.name)
+#
+		#if GameInteraction.pick and not GameInteraction.drop:
+			#pick_object(nearby_object)
+		#elif GameInteraction.drop and not GameInteraction.pick and inventory._content.size() > 0:
+			#if nearby_object is Recipe:
+				#place_object(nearby_object)
+			#else:
+				#print("Impossible de placer cet objet ici.")
+#
+	## Permet de déposer un objet même s'il n'y a rien à proximité
+	#elif Input.is_action_just_pressed("interact") and GameInteraction.drop and not GameInteraction.pick and inventory._content.size() > 0 and !can_interact_object:
+		#drop_all_objects()
+	pass
 
 # Ramasse un objet et l'ajoute à l'inventaire
 func pick_object(item: Item):
@@ -105,7 +131,7 @@ func drop_all_objects():
 	
 	for item in inventory.get_items():
 		print("🗑️ Objet déposé :", item.name)
-		inventory.remove_item(item)
+		#inventory.remove_item(item, 1)
 	
 	print("✅ Tous les objets ont été déposés.")
 

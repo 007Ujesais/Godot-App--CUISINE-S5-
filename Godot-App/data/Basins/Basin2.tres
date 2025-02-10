@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Basin" load_steps=4 format=3 uid="uid://bch57euh8wwt5"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_hx5nu"]
+[ext_resource type="Resource" uid="uid://cpa7bapcsen3s" path="res://data/Actions/Cook.tres" id="2_7j4y2"]
+[ext_resource type="Script" path="res://scripts/Object/Basin.gd" id="4_fvna3"]
+
+[resource]
+script = ExtResource("4_fvna3")
+name = "Basin 02"
+Actions = Array[ExtResource("1_hx5nu")]([ExtResource("2_7j4y2")])

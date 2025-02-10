@@ -1,29 +1,30 @@
+class_name ActionSlot
 extends PanelContainer
 
-@onready var button: Button = %Button
-var _action: Action
+@onready var action_control: MenuAction = %ActionControl
+@onready var result_control: MenuResult = %ResultControl
+
 var _node_object:Node3D
 
+func _ready():
+	show_action()
+	hide_result()
+
 func display(action: Action, node_object:Node3D):
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_node_object = node_object
-	if action:
-		_action = action
-		button.text = action.name
-	else:
-		print_debug("⚠️ L'action est null !")
+	action_control.display(action,_node_object, self)
 
-func _on_button_pressed() -> void:
-	if _action and _action.scripts:
-		print("Action cliquée : " + _action.name)
-
-		# Créer un nouvel objet avec le script attaché
-		var script_instance = Node.new()
-		script_instance.set_script(_action.scripts)
-
-		# Vérifier si la fonction existe dans le script et l'exécuter
-		if script_instance.has_method("execute"):
-			script_instance.execute(_node_object)  # Assure-toi que `node_object` est défini
-		else:
-			print_debug("⚠️ Le script ne contient pas de méthode 'execute'")
-	else:
-		print_debug("⚠️ Action ou script non défini !")
+func show_action():
+	action_control.show()
+	
+func hide_action():
+	action_control.hide()
+	
+func show_result(basin:Basin):
+	result_control.show()
+	#hide_action()
+	result_control.display(basin)
+	
+func hide_result():
+	result_control.hide()

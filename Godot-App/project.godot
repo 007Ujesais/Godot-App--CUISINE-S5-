@@ -27,11 +27,16 @@ run/main_scene="res://scenes/Interface/loading.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+general/default_playback_type.web=0
+
 [autoload]
 
 GameManager="*res://scripts/globals/game_manager.gd"
 GameInteraction="*res://scripts/globals/game_interaction.gd"
 AudioManager="*res://scenes/Globals/Audio_manager.tscn"
+InterfaceManager="*res://scripts/globals/Interface_manager.gd"
 
 [display]
 
@@ -39,6 +44,7 @@ window/size/viewport_width=1870
 window/size/viewport_height=980
 window/size/initial_position_type=2
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://assets/Icons/PNG/pointer_b.png"
 
 [editor_plugins]
 
@@ -61,6 +67,12 @@ import/fbx/enabled=false
 [godot_resource_groups]
 
 auto_rebuild=true
+
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0
+}
 
 [input]
 
@@ -102,6 +114,7 @@ cooking={
 
 [input_devices]
 
+compatibility/legacy_just_pressed_behavior=true
 pointing/emulate_touch_from_mouse=true
 
 [layer_names]

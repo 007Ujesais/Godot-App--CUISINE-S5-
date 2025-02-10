@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://sfbcw0rs5s76"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_f6dx2"]
+[ext_resource type="Texture2D" uid="uid://bmtufgqk4nnlh" path="res://assets/Icons/Food/cheese-cut.png" id="2_8qjx5"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="2_ubx4j"]
+[ext_resource type="PackedScene" uid="uid://7c7kf1ejxjbf" path="res://assets/models/Food/cheese.glb" id="3_5r4bn"]
+
+[resource]
+script = ExtResource("2_ubx4j")
+scene = ExtResource("3_5r4bn")
+icon = ExtResource("2_8qjx5")
+name = "Fromage"
+Actions = Array[ExtResource("1_f6dx2")]([])

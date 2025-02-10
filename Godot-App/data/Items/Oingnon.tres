@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://7b4mek8jbnnd"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_43h82"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="2_tclai"]
+[ext_resource type="Texture2D" uid="uid://cs13vo6iv7iiq" path="res://assets/Icons/Food/onion.png" id="2_wbf4k"]
+[ext_resource type="PackedScene" uid="uid://pxm0pjbem2gd" path="res://assets/models/Food/onion.glb" id="3_hcjw8"]
+
+[resource]
+script = ExtResource("2_tclai")
+scene = ExtResource("3_hcjw8")
+icon = ExtResource("2_wbf4k")
+name = "Oingnon"
+Actions = Array[ExtResource("1_43h82")]([])

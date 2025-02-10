@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=6 format=3 uid="uid://cuv8romcwndlh"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_47p0c"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="3_b2asl"]
+[ext_resource type="Resource" uid="uid://vwaghb07luhm" path="res://data/Items/Tomate.tres" id="3_xhotc"]
+[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/Pate.tres" id="4_d4d5x"]
+[ext_resource type="Script" path="res://scripts/Object/Recipe.gd" id="6_aj61l"]
+
+[resource]
+script = ExtResource("6_aj61l")
+ingredients = Array[ExtResource("3_b2asl")]([ExtResource("3_xhotc"), ExtResource("3_xhotc")])
+results = Array[ExtResource("3_b2asl")]([ExtResource("4_d4d5x")])
+launch_time = {
+"h": 0,
+"m": 0,
+"s": 3
+}
+name = "Pizza"
+Actions = Array[ExtResource("1_47p0c")]([])

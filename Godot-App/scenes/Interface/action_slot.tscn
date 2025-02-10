@@ -1,12 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhto3via38ekh"]
+[gd_scene load_steps=4 format=3 uid="uid://dhto3via38ekh"]
 
 [ext_resource type="Script" path="res://scripts/Interface/action_slot.gd" id="1_movhv"]
+[ext_resource type="PackedScene" uid="uid://b4rc5k8e8ibkt" path="res://scenes/Interface/menu/menu_action.tscn" id="3_iwaqj"]
+[ext_resource type="PackedScene" uid="uid://bl7io0ojj58bp" path="res://scenes/Interface/menu/menu_result.tscn" id="4_bqtws"]
 
 [node name="PanelContainer" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0.392157)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_movhv")
 
-[node name="Button" type="Button" parent="."]
+[node name="ActionContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ActionControl" parent="ActionContainer" instance=ExtResource("3_iwaqj")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="ResultControl" parent="ActionContainer" instance=ExtResource("4_bqtws")]
+unique_name_in_owner = true
+layout_mode = 2

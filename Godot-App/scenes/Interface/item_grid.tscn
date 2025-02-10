@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl0dc2ub8svvk"]
+[gd_scene load_steps=3 format=3 uid="uid://dl0dc2ub8svvk"]
 
 [ext_resource type="Script" path="res://scripts/Interface/item_grid.gd" id="1_gqsao"]
+[ext_resource type="PackedScene" uid="uid://uteod4o0xoix" path="res://scenes/Interface/Sound/install_sounds.tscn" id="2_j7r2i"]
 
-[node name="ItemGrid" type="GridContainer"]
-columns = 5
+[node name="ItemGrid" type="ScrollContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_gqsao")
+
+[node name="GridContainerItemSlot" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="InstallSounds" parent="GridContainerItemSlot" instance=ExtResource("2_j7r2i")]
+root_path = NodePath("../..")

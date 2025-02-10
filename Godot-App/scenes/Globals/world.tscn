@@ -1,20 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmm3cd6ymtfjm"]
+[gd_scene load_steps=17 format=3 uid="uid://bmm3cd6ymtfjm"]
 
 [ext_resource type="PackedScene" uid="uid://bwlltj5038tam" path="res://scenes/objects/Table.tscn" id="1_cyvhd"]
 [ext_resource type="MeshLibrary" uid="uid://b75634axcxj1v" path="res://assets/Mesh/Tiles.tres" id="1_gotvc"]
 [ext_resource type="Material" uid="uid://d23mm0aj88n02" path="res://materials/floor_material.tres" id="1_w33s1"]
 [ext_resource type="Material" uid="uid://bn0nf5oh3ywh4" path="res://materials/wall_material.tres" id="2_m01uf"]
-[ext_resource type="Script" path="res://scripts/world/auto_hider.gd" id="3_8itgw"]
 [ext_resource type="PackedScene" uid="uid://cpd0nbs8o8ipt" path="res://scenes/player/player.tscn" id="3_bs0p0"]
-[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/pizza.tres" id="3_sgnw1"]
-[ext_resource type="Resource" uid="uid://vwaghb07luhm" path="res://data/Items/eggplant.tres" id="4_ud350"]
+[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/Pate.tres" id="3_sgnw1"]
+[ext_resource type="Resource" uid="uid://vwaghb07luhm" path="res://data/Items/Tomate.tres" id="4_ud350"]
 [ext_resource type="PackedScene" uid="uid://dt6rxq0rqqlk7" path="res://scenes/player/camera_rig.tscn" id="4_wc57n"]
 [ext_resource type="PackedScene" uid="uid://bxa8x2t7arm8" path="res://scenes/objects/Object.tscn" id="6_ov84t"]
 [ext_resource type="PackedScene" uid="uid://c7turwwvevc5a" path="res://scenes/objects/Oven.tscn" id="7_1844x"]
 [ext_resource type="Script" path="res://scripts/Interface/ui_root.gd" id="8_0tifu"]
 [ext_resource type="PackedScene" uid="uid://buxtipcglim2h" path="res://scenes/Interface/dialog/inventory_dialog.tscn" id="8_kvvpp"]
 [ext_resource type="PackedScene" uid="uid://dp8qcil1fjge6" path="res://scenes/Interface/dialog/cooking_dialog.tscn" id="10_qe8hn"]
-[ext_resource type="Resource" uid="uid://cbdwmys1y2cma" path="res://data/all_recipes.tres" id="11_thpt7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_18m6p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -89,19 +87,19 @@ size = Vector3(194.828, 1, 172.883)
 
 [node name="wall5" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, -1, -0.0284708, 1.9912, 2.71339)
+visible = false
 layers = 2
 material_override = ExtResource("2_m01uf")
 use_collision = true
 size = Vector3(0.252458, 2.99136, 2.64676)
-script = ExtResource("3_8itgw")
 
 [node name="wall6" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00431005, 1.9912, -2.34905)
+visible = false
 layers = 2
 material_override = ExtResource("2_m01uf")
 use_collision = true
 size = Vector3(0.208267, 2.9845, 4)
-script = ExtResource("3_8itgw")
 
 [node name="player" parent="." instance=ExtResource("3_bs0p0")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.498, 0)
@@ -111,7 +109,6 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="UIRoot" type="CanvasLayer" parent="."]
 script = ExtResource("8_0tifu")
-all_recipes = ExtResource("11_thpt7")
 
 [node name="InventoryDialog" parent="UIRoot" instance=ExtResource("8_kvvpp")]
 unique_name_in_owner = true

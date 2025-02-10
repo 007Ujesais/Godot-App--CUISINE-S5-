@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Source" load_steps=16 format=3 uid="uid://cx6pdh10rpko8"]
+
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="1_la32m"]
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_yyyul"]
+[ext_resource type="Script" path="res://scripts/Object/Inventory.gd" id="2_dhqd1"]
+[ext_resource type="Resource" uid="uid://c8ub0wpmfqtpr" path="res://data/Actions/Open.tres" id="2_efrqs"]
+[ext_resource type="Script" path="res://scripts/Object/Source.gd" id="2_mbkfg"]
+[ext_resource type="Resource" uid="uid://djrqhgkw47o4y" path="res://data/Items/Bouillon.tres" id="3_mhp20"]
+[ext_resource type="Resource" uid="uid://c15qedsckh6s4" path="res://data/Items/Charcuterie.tres" id="4_rhdyc"]
+[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/Pate.tres" id="5_xdkfr"]
+[ext_resource type="Resource" uid="uid://clefvl7jjq6b6" path="res://data/Items/Riz.tres" id="6_tppm4"]
+[ext_resource type="Resource" uid="uid://vwaghb07luhm" path="res://data/Items/Tomate.tres" id="7_xww21"]
+[ext_resource type="Resource" uid="uid://7b4mek8jbnnd" path="res://data/Items/Oingnon.tres" id="8_k8gxl"]
+[ext_resource type="Resource" uid="uid://k1uq5se6x2ur" path="res://data/Items/Oeuf.tres" id="9_1ppg5"]
+[ext_resource type="Resource" uid="uid://syb225iyckwf" path="res://data/Items/Porc.tres" id="10_fljb4"]
+[ext_resource type="Resource" uid="uid://c43x4cgdwt44m" path="res://data/Items/Pain.tres" id="11_m5iav"]
+
+[sub_resource type="Resource" id="Resource_a3ot5"]
+script = ExtResource("2_dhqd1")
+_max_size = 20
+_content = Array[ExtResource("1_la32m")]([ExtResource("3_mhp20"), ExtResource("3_mhp20"), ExtResource("3_mhp20"), ExtResource("4_rhdyc"), ExtResource("4_rhdyc"), ExtResource("4_rhdyc"), ExtResource("5_xdkfr"), ExtResource("6_tppm4"), ExtResource("7_xww21"), ExtResource("8_k8gxl"), ExtResource("9_1ppg5"), ExtResource("9_1ppg5"), ExtResource("9_1ppg5"), ExtResource("5_xdkfr"), ExtResource("7_xww21"), ExtResource("10_fljb4"), ExtResource("6_tppm4"), ExtResource("11_m5iav"), ExtResource("10_fljb4"), ExtResource("9_1ppg5")])
+
+[resource]
+script = ExtResource("2_mbkfg")
+_content = SubResource("Resource_a3ot5")
+name = ""
+Actions = Array[ExtResource("1_yyyul")]([ExtResource("2_efrqs")])

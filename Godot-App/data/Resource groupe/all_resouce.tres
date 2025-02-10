@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" load_steps=2 format=3 uid="uid://r80gpoqtd5vw"]
+
+[ext_resource type="Script" path="res://addons/godot_resource_groups/resource_group.gd" id="1_y6fam"]
+
+[resource]
+script = ExtResource("1_y6fam")
+base_folder = "res://data/Items"
+includes = Array[String](["*.tres"])
+excludes = Array[String]([])
+paths = Array[String](["res://data/Items/Bouillon.tres", "res://data/Items/Charcuterie.tres", "res://data/Items/Fromage.tres", "res://data/Items/Oeuf.tres", "res://data/Items/Oingnon.tres", "res://data/Items/Pain.tres", "res://data/Items/Pate.tres", "res://data/Items/Porc.tres", "res://data/Items/Riz.tres", "res://data/Items/Tomate.tres"])

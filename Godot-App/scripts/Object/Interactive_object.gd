@@ -15,36 +15,44 @@ func _ready():
 
 func _on_area_entered(area):
 	if area.is_in_group("player"):
+		if object is Basin:
+			if object.placed_ingredients.is_empty():
+				instance_ui.show_actions(self)
+		if object is Source:
+			instance_ui.show_actions(self)
+
 		is_player_near = true
 		print("Joueur proche: " + object.name)
-		instance_ui.show_actions(object, self)
 		can_interact_it()
 
 func _on_area_exited(area):
 	if area.is_in_group("player"):
+		if object is Basin:
+			if object.placed_ingredients.is_empty():
+				instance_ui.hide_actions()
+		if object is Source:
+			instance_ui.hide_actions()
+
 		is_player_near = false
 		print("Joueur n'est plus proche de: " + object.name)
-		instance_ui.hide_actions()
 		cant_interact_it()
 
 func can_interact_it():
-	GameInteraction.pick = false
-	
-	if object is Item:
-		GameInteraction.can_pick()
-	if object is Recipe:
-		GameInteraction.can_drop()
-		
-	if GameManager.player:
-		GameManager.player.can_interact_object = true
-		GameManager.player.nearby_object = object
-		GameManager.player.node_object = self
-		
+	if object is Basin and object.recipe:
+		var HB_Button_result_menu = instance_ui.find_child("HBoxContainerButtonResultMenu", true, false)
+		if HB_Button_result_menu and object.placed_ingredients != object.recipe.results and !object.in_preparation:
+			HB_Button_result_menu.show()
+			
+		var Claim_button = instance_ui.find_child("ButtonClaim", true, false)
+		if Claim_button:
+			Claim_button.disabled = false
 
 func cant_interact_it():
-	GameInteraction.pick = false
-	
-	if GameManager.player:
-		GameManager.player.can_interact_object = false
-		GameManager.player.nearby_object = null
-		GameManager.player.node_object = null
+	if object is Basin: 
+		var HB_Button_result_menu = instance_ui.find_child("HBoxContainerButtonResultMenu", true, false)
+		if HB_Button_result_menu:
+			HB_Button_result_menu.hide()
+			
+		var Claim_button = instance_ui.find_child("ButtonClaim", true, false)
+		if Claim_button:
+			Claim_button.disabled = true

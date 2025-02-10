@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://djrqhgkw47o4y"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_j2t50"]
+[ext_resource type="Texture2D" uid="uid://gvtdt5iwlewv" path="res://assets/Icons/Food/bowl-soup.png" id="2_k86td"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="2_w7v2g"]
+[ext_resource type="PackedScene" uid="uid://51k32owsuu7e" path="res://assets/models/Food/bowl-soup.glb" id="3_30ftl"]
+
+[resource]
+script = ExtResource("2_w7v2g")
+scene = ExtResource("3_30ftl")
+icon = ExtResource("2_k86td")
+name = "Bouillon"
+Actions = Array[ExtResource("1_j2t50")]([])

@@ -1,7 +1,15 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://dxhgocvbo582"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://dxhgocvbo582"]
 
 [ext_resource type="FontFile" uid="uid://vbxyw82hg2gp" path="res://assets/fonts/Matt_Trial-Medium.ttf" id="1_rmfdl"]
 [ext_resource type="Texture2D" uid="uid://bkp4gorj58xq6" path="res://assets/Themes/Rectangle 604.png" id="2_vs0kq"]
+[ext_resource type="Texture2D" uid="uid://dn54wswvhik04" path="res://assets/Themes/Rectangle 605.png" id="3_y2fuw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_towa5"]
+texture = ExtResource("2_vs0kq")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mx6kr"]
 
@@ -78,12 +86,48 @@ texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0js5l"]
+texture = ExtResource("3_y2fuw")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+axis_stretch_vertical = 1
+modulate_color = Color(0, 0.972549, 0.0823529, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7qap4"]
+texture = ExtResource("3_y2fuw")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+modulate_color = Color(0.458646, 1, 0.43663, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwwfo"]
+texture = ExtResource("3_y2fuw")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tf8yr"]
+texture = ExtResource("3_y2fuw")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+modulate_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sou1s"]
+
 [resource]
 Button/colors/font_color = Color(0.273873, 0.273873, 0.273873, 1)
+Button/colors/font_disabled_color = Color(1, 0.387955, 0.319725, 1)
 Button/colors/font_focus_color = Color(0.27451, 0.27451, 0.27451, 1)
-Button/colors/font_hover_color = Color(0, 0.972549, 0.0823529, 1)
+Button/colors/font_hover_color = Color(0.129412, 0.129412, 0.129412, 1)
 Button/colors/font_outline_color = Color(0, 0.972549, 0.0823529, 1)
 Button/fonts/font = ExtResource("1_rmfdl")
+Button/styles/disabled = SubResource("StyleBoxTexture_towa5")
 Button/styles/focus = SubResource("StyleBoxEmpty_mx6kr")
 Button/styles/hover = SubResource("StyleBoxTexture_bev6h")
 Button/styles/normal = SubResource("StyleBoxTexture_k1slc")
@@ -126,3 +170,8 @@ TextEdit/fonts/font = ExtResource("1_rmfdl")
 Tree/fonts/font = ExtResource("1_rmfdl")
 Tree/fonts/title_button_font = ExtResource("1_rmfdl")
 VBoxContainer/constants/separation = 10
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_0js5l")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_7qap4")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_jwwfo")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_tf8yr")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_sou1s")

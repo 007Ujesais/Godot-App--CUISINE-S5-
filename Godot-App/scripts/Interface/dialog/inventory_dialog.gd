@@ -1,17 +1,14 @@
 class_name InventoryDialog
 extends PanelContainer
 
-@export var slot_scene: PackedScene
-
 @onready var grid_container: ItemGrid = %GridContainer
 
-func open(inventory: Inventory):
+func open():
 	show()
 	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	grid_container.display(inventory.get_items())
+	grid_container.display(GameManager.player.inventory.get_items())
 
 func _on_close_button_pressed(): 
-	hide()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	InterfaceManager.close_dialog()

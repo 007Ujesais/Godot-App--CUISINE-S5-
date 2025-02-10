@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Objects" load_steps=3 format=3 uid="uid://cvyg181fm5vsv"]
+[gd_resource type="Resource" script_class="Objects" load_steps=4 format=3 uid="uid://cvyg181fm5vsv"]
 
 [ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_21p1v"]
 [ext_resource type="Script" path="res://scripts/Object/Objects.gd" id="2_jlvff"]
+[ext_resource type="Resource" uid="uid://cpa7bapcsen3s" path="res://data/Actions/Cook.tres" id="2_v1y8b"]
 
 [resource]
 script = ExtResource("2_jlvff")
 name = "Oven"
-Actions = Array[ExtResource("1_21p1v")]([])
+Actions = Array[ExtResource("1_21p1v")]([ExtResource("2_v1y8b")])

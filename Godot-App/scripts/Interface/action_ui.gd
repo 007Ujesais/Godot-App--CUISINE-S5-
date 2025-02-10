@@ -12,9 +12,12 @@ func _process(delta):
 	var position_2d = GameManager.camera.get_base_camera().unproject_position(global_transform.origin)
 	container.position = position_2d
 
-func show_actions(object:Objects, node_object:Node3D):
-	canvas_layer.show()
-	action_grid.display(object, node_object)
+func show_actions(node_object:Node3D):
+	container.show()
+	if node_object is interactive_object:
+		if node_object.object:
+			action_grid.display(node_object)
 
 func hide_actions():
-	canvas_layer.hide()
+	InterfaceManager.close_dialog()
+	container.hide()

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4rc5k8e8ibkt"]
+
+[ext_resource type="Script" path="res://scripts/Interface/menu/menu_action.gd" id="1_ubrg4"]
+
+[node name="ActionControl" type="PanelContainer"]
+size_flags_vertical = 3
+script = ExtResource("1_ubrg4")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

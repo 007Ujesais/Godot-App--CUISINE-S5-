@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=5 format=3 uid="uid://cyibsavcjw8f8"]
+
+[ext_resource type="Script" path="res://scripts/Object/Inventory.gd" id="1_tfx21"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="1_y2uah"]
+[ext_resource type="Resource" uid="uid://drh6f58kicf6u" path="res://data/Items/Pate.tres" id="2_rn1tv"]
+[ext_resource type="Resource" uid="uid://vwaghb07luhm" path="res://data/Items/Tomate.tres" id="2_ymb4t"]
+
+[resource]
+script = ExtResource("1_tfx21")
+_max_size = 25
+_content = Array[ExtResource("1_y2uah")]([ExtResource("2_ymb4t"), ExtResource("2_rn1tv")])

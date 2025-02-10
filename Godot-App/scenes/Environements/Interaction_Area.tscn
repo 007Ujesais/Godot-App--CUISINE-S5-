@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgkqn8rkxsuet"]
+
+[ext_resource type="Shader" path="res://assets/shaders/zone-debug.gdshader" id="1_6a33k"]
+[ext_resource type="Script" path="res://scripts/Object/Interactive_object.gd" id="1_ovrw7"]
+[ext_resource type="Shader" path="res://assets/shaders/move-marker.gdshader" id="4_b8y6x"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ojoha"]
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pvrl"]
+render_priority = 0
+shader = ExtResource("1_6a33k")
+shader_parameter/color = Color(0, 0.996078, 0, 0.501961)
+shader_parameter/colorB = Color(0, 1, 0, 0)
+shader_parameter/colorAnimationStart = Color(1, 1, 1, 1)
+shader_parameter/colorAnimationEnd = Color(0, 0.967, 0.749939, 1)
+shader_parameter/fade_length = 0.777
+shader_parameter/colorB_size = 0.5
+shader_parameter/pulse_speed = 2.0
+shader_parameter/time_offset = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gwchh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_natjo"]
+render_priority = 0
+shader = ExtResource("4_b8y6x")
+shader_parameter/color = Color(1, 1, 1, 0.439216)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6qkwn"]
+radius = 5.37807
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.37761, 0)
+script = ExtResource("1_ovrw7")
+
+[node name="VFX" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.7492, 0, 0, 0, 1, 0, 0, 0, 10.7492, 0, -3.38147, 0)
+mesh = SubResource("CylinderMesh_ojoha")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_1pvrl")
+
+[node name="HFX" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.39805, 0, 0, 0, 1.24789, 0, 0, 0, 5.50028, 0, -4.38075, 0)
+mesh = SubResource("PlaneMesh_gwchh")
+surface_material_override/0 = SubResource("ShaderMaterial_natjo")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.3878, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_6qkwn")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_exited"]

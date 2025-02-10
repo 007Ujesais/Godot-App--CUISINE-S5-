@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://drh6f58kicf6u"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_m2i4d"]
+[ext_resource type="Texture2D" uid="uid://bximlgolch65x" path="res://assets/Icons/pizza.png" id="2_vcyp0"]
+[ext_resource type="PackedScene" uid="uid://fdxcckarw3ql" path="res://assets/models/Object/Plate1.glb" id="3_oqg7s"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="4_7xsrc"]
+
+[resource]
+script = ExtResource("4_7xsrc")
+scene = ExtResource("3_oqg7s")
+icon = ExtResource("2_vcyp0")
+name = "Pâte"
+Actions = Array[ExtResource("1_m2i4d")]([])

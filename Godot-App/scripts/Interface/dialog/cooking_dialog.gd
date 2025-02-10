@@ -1,23 +1,38 @@
 class_name CookingDialog
 extends PanelContainer
 
-@export var slot_scene: PackedScene
+@export var all_recipes:ResourceGroup
 
 @onready var recipe_list: ItemList = %RecipeList
 @onready var ingredient_container: ItemGrid = %IngredientContainer
 @onready var result_container: ItemGrid = %ResultContainer
+@onready var cooking_button: Button = %CookingButton
 
 var _inventory:Inventory
-var _selected_recipe:Recipe
 
-func open(recipes:Array[Recipe], inventory: Inventory):
-	_inventory = inventory
-	show()
+var _basin:Basin
+var _selected_recipe:Recipe
+var _all_recipes:Array[Recipe] = []
+
+func _ready():
+	all_recipes.load_all_into(_all_recipes)
+	set_elements()
+
+func set_elements():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	_basin = GameManager.player.curent_basin
+	_inventory = GameManager.player.inventory
+
+func open():
+	set_elements()
+	show()
 	
+	if _basin.percentage <= 0:
+		cooking_button.disabled = false
+
 	recipe_list.clear()
 	
-	for recipe in recipes:
+	for recipe in _all_recipes:
 		var index = recipe_list.add_item(recipe.name)
 		recipe_list.set_item_metadata(index, recipe)
 		
@@ -29,15 +44,28 @@ func _on_recipe_list_item_selected(index: int) -> void:
 	_selected_recipe = recipe_list.get_item_metadata(index)
 	ingredient_container.display(_selected_recipe.ingredients)
 	result_container.display(_selected_recipe.results)
+	
+	if _basin.percentage <= 0:
+		for item in _inventory.get_items():
+			if _selected_recipe.ingredients.has(item):
+				cooking_button.disabled = false
+				break
+			else:
+				cooking_button.disabled = true
 
 func _on_close_button_pressed(): 
-	hide()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	InterfaceManager.close_dialog()
+	GameManager.player.animation_player.play("idle2")
 
 
 func _on_cooking_button_pressed() -> void:
-	for item in _selected_recipe.ingredients:
-		_inventory.remove_item(item)
-	
-	for item in _selected_recipe.results:
-		_inventory.add_item(item)
+	if not _basin.in_preparation:
+		_basin.recipe = _selected_recipe
+		for item in _selected_recipe.ingredients:
+			if item in _inventory.get_items():
+				_basin.place_item(item)
+	start_cooking()
+
+func start_cooking():
+	cooking_button.disabled = true
+	GameManager.player.animation_player.play("cooking")

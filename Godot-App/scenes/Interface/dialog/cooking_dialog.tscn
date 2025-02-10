@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp8qcil1fjge6"]
+[gd_scene load_steps=6 format=3 uid="uid://dp8qcil1fjge6"]
 
 [ext_resource type="Script" path="res://scripts/Interface/dialog/cooking_dialog.gd" id="1_0y2en"]
 [ext_resource type="Theme" uid="uid://dxhgocvbo582" path="res://assets/Themes/Cooking_dialog.tres" id="1_u3e1q"]
 [ext_resource type="PackedScene" uid="uid://dl0dc2ub8svvk" path="res://scenes/Interface/item_grid.tscn" id="2_27um3"]
+[ext_resource type="Texture2D" uid="uid://fqnnkml4lphe" path="res://assets/Icons/SVG/cross_small.svg" id="3_icnyj"]
+[ext_resource type="Resource" uid="uid://cbdwmys1y2cma" path="res://data/Resource groupe/all_recipes.tres" id="3_jfnwm"]
 
 [node name="CookingDialog" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0.392157)
@@ -13,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_u3e1q")
 script = ExtResource("1_0y2en")
+all_recipes = ExtResource("3_jfnwm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -28,10 +31,16 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="closeButton" type="Button" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-self_modulate = Color(1, 0.215686, 0.282353, 1)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_icons/icon = ExtResource("3_icnyj")
+action_mode = 0
+icon = ExtResource("3_icnyj")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,6 +77,7 @@ layout_mode = 2
 
 [node name="IngredientContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer" instance=ExtResource("2_27um3")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(13, 205)
 layout_mode = 2
 
 [node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
@@ -81,17 +91,19 @@ layout_mode = 2
 
 [node name="ResultContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer2" instance=ExtResource("2_27um3")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 205)
 layout_mode = 2
 
-[node name="Control" type="Control" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 10
 
-[node name="CookingButton" type="Button" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+[node name="CookingButton" type="Button" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
-text = "Cook"
+text = "Prepare"
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/closeButton" to="." method="_on_close_button_pressed"]
 [connection signal="item_selected" from="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer/RecipeList" to="." method="_on_recipe_list_item_selected"]
-[connection signal="pressed" from="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/CookingButton" to="." method="_on_cooking_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer3/CookingButton" to="." method="_on_cooking_button_pressed"]

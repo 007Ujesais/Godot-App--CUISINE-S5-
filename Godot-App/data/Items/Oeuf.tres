@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://k1uq5se6x2ur"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_07cad"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="2_gtk4l"]
+[ext_resource type="Texture2D" uid="uid://6v5gob7ovfi5" path="res://assets/Icons/Food/egg.png" id="2_w7xuf"]
+[ext_resource type="PackedScene" uid="uid://cxktpdl3ulx03" path="res://assets/models/Food/egg.glb" id="3_d5qye"]
+
+[resource]
+script = ExtResource("2_gtk4l")
+scene = ExtResource("3_d5qye")
+icon = ExtResource("2_w7xuf")
+name = "Oeuf"
+Actions = Array[ExtResource("1_07cad")]([])

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://clefvl7jjq6b6"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_ih1wp"]
+[ext_resource type="Texture2D" uid="uid://brl06pmil77gf" path="res://assets/Icons/Food/bag-flat.png" id="2_2e2hj"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="2_2u3fi"]
+[ext_resource type="PackedScene" uid="uid://bjbpjnkedbnj6" path="res://assets/models/Food/bag.glb" id="3_yft3g"]
+
+[resource]
+script = ExtResource("2_2u3fi")
+scene = ExtResource("3_yft3g")
+icon = ExtResource("2_2e2hj")
+name = "Riz"
+Actions = Array[ExtResource("1_ih1wp")]([])

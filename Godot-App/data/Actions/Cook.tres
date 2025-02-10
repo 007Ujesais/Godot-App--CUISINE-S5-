@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Action" load_steps=3 format=3 uid="uid://cpa7bapcsen3s"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_xh1f0"]
+[ext_resource type="Script" path="res://scripts/Actions/prepare_recipe.gd" id="2_sgb06"]
+
+[resource]
+script = ExtResource("1_xh1f0")
+name = "Prepare dish"
+scripts = ExtResource("2_sgb06")

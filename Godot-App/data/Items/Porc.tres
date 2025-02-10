@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://syb225iyckwf"]
+
+[ext_resource type="Script" path="res://scripts/Object/Action.gd" id="1_gon6k"]
+[ext_resource type="Texture2D" uid="uid://bd7vwnchw8ood" path="res://assets/Icons/Food/meat-raw.png" id="2_057ms"]
+[ext_resource type="Script" path="res://scripts/Object/Item.gd" id="2_cq024"]
+[ext_resource type="PackedScene" uid="uid://dqrttqw7r66l" path="res://assets/models/Food/meat-raw.glb" id="3_357ol"]
+
+[resource]
+script = ExtResource("2_cq024")
+scene = ExtResource("3_357ol")
+icon = ExtResource("2_057ms")
+name = "Porc"
+Actions = Array[ExtResource("1_gon6k")]([])

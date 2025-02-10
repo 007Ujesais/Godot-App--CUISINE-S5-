@@ -23,12 +23,21 @@
       "resource_name": {
         "visibility": 0
       }
+    },
+    "res://data/Recipes/": {
+      "resource_local_to_scene": {
+        "visibility": 0
+      },
+      "resource_name": {
+        "visibility": 0
+      }
     }
   },
   "recent_paths": [
     "res://data/Items/",
     "res://data/Actions/",
-    "res://data/Objects/"
+    "res://data/Objects/",
+    "res://data/Recipes/"
   ],
   "table_functions": {
     "filter": [

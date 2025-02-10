@@ -1,16 +1,24 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3yn64m17v75u"]
+[gd_scene load_steps=24 format=3 uid="uid://d3yn64m17v75u"]
 
 [ext_resource type="MeshLibrary" uid="uid://b75634axcxj1v" path="res://assets/Mesh/Tiles.tres" id="1_8xrbj"]
 [ext_resource type="Script" path="res://scenes/Game/Game.gd" id="1_eg2xg"]
 [ext_resource type="PackedScene" uid="uid://cpd0nbs8o8ipt" path="res://scenes/player/player.tscn" id="2_mwnx3"]
 [ext_resource type="PackedScene" uid="uid://dt6rxq0rqqlk7" path="res://scenes/player/camera_rig.tscn" id="3_52uu4"]
+[ext_resource type="Resource" uid="uid://bo887ulhc0abf" path="res://data/Basins/Basin1.tres" id="3_ltdd2"]
+[ext_resource type="Resource" uid="uid://bch57euh8wwt5" path="res://data/Basins/Basin2.tres" id="4_hvkf4"]
 [ext_resource type="Script" path="res://scripts/Interface/ui_root.gd" id="4_ntbvo"]
-[ext_resource type="Resource" uid="uid://cbdwmys1y2cma" path="res://data/all_recipes.tres" id="5_y2t60"]
+[ext_resource type="Resource" uid="uid://c0hn7cekt5irh" path="res://data/Basins/Basin3.tres" id="5_x5jo7"]
+[ext_resource type="Resource" uid="uid://cxjkvwadclo02" path="res://data/Basins/Basin4.tres" id="6_swb1d"]
 [ext_resource type="PackedScene" uid="uid://buxtipcglim2h" path="res://scenes/Interface/dialog/inventory_dialog.tscn" id="6_wvaue"]
+[ext_resource type="PackedScene" uid="uid://b508x7iqthah3" path="res://scenes/Interface/menu/MenuContainer.tscn" id="7_ft7wq"]
+[ext_resource type="Resource" uid="uid://cx6pdh10rpko8" path="res://data/Sources/Frigo.tres" id="7_j2ek8"]
 [ext_resource type="PackedScene" uid="uid://dp8qcil1fjge6" path="res://scenes/Interface/dialog/cooking_dialog.tscn" id="7_rrrlp"]
 [ext_resource type="Shader" path="res://scenes/Game/World.gdshader" id="8_5pd00"]
 [ext_resource type="Texture2D" uid="uid://bkp4gorj58xq6" path="res://assets/Themes/Rectangle 604.png" id="9_hkxwd"]
 [ext_resource type="PackedScene" uid="uid://uteod4o0xoix" path="res://scenes/Interface/Sound/install_sounds.tscn" id="11_ufksp"]
+[ext_resource type="Theme" uid="uid://dxhgocvbo582" path="res://assets/Themes/Cooking_dialog.tres" id="12_ippxs"]
+[ext_resource type="PackedScene" uid="uid://bgkqn8rkxsuet" path="res://scenes/Environements/Interaction_Area.tscn" id="12_tn506"]
+[ext_resource type="PackedScene" uid="uid://dog3lbwdfpnj4" path="res://scenes/Interface/dialog/resource_dialog.tscn" id="15_p6n4j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q7uef"]
 sky_top_color = Color(0.00398195, 0.215173, 0.872429, 1)
@@ -31,8 +39,7 @@ sky = SubResource("Sky_5rame")
 ambient_light_source = 2
 ambient_light_color = Color(0.886275, 0.827451, 1, 1)
 tonemap_mode = 2
-tonemap_exposure = 1.13
-tonemap_white = 1.7
+tonemap_white = 2.0
 glow_strength = 0.07
 volumetric_fog_density = 0.005
 volumetric_fog_emission = Color(0.8, 0.952941, 1, 1)
@@ -55,6 +62,33 @@ environment = SubResource("Environment_ypjeb")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environements"]
 transform = Transform3D(0.779103, -0.447288, -0.43924, 0.590023, 0.286439, 0.754868, -0.211828, -0.847282, 0.487076, 0, 0, 0)
 shadow_enabled = true
+
+[node name="Interactions" type="Node3D" parent="."]
+
+[node name="cooking" type="Node3D" parent="Interactions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.38077)
+
+[node name="cooking_Area1" parent="Interactions/cooking" instance=ExtResource("12_tn506")]
+transform = Transform3D(0.0831372, 0, 0, 0, 0.492876, 0, 0, 0, 0.0831372, 3.94445, 2.16915, -8.55065)
+object = ExtResource("3_ltdd2")
+
+[node name="cooking_Area2" parent="Interactions/cooking" instance=ExtResource("12_tn506")]
+transform = Transform3D(0.0831372, 0, 0, 0, 0.492876, 0, 0, 0, 0.0831372, 4.94746, 2.16915, -8.55065)
+object = ExtResource("4_hvkf4")
+
+[node name="cooking_Area3" parent="Interactions/cooking" instance=ExtResource("12_tn506")]
+transform = Transform3D(0.0831372, 0, 0, 0, 0.492876, 0, 0, 0, 0.0831372, 7.94663, 2.16915, -8.55065)
+object = ExtResource("5_x5jo7")
+
+[node name="cooking_Area4" parent="Interactions/cooking" instance=ExtResource("12_tn506")]
+transform = Transform3D(0.0831372, 0, 0, 0, 0.492876, 0, 0, 0, 0.0831372, 8.95569, 2.16915, -8.55065)
+object = ExtResource("6_swb1d")
+
+[node name="Source" type="Node3D" parent="Interactions"]
+
+[node name="Source_Area1" parent="Interactions/Source" instance=ExtResource("12_tn506")]
+transform = Transform3D(0.0831372, 0, 0, 0, 0.492876, 0, 0, 0, 0.0831372, 5.54457, 2.16915, -5.17722)
+object = ExtResource("7_j2ek8")
 
 [node name="Maps" type="Node3D" parent="."]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 5.48072, -1.38231, 0)
@@ -133,12 +167,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_ntbvo")
+
+[node name="Menu" type="CanvasLayer" parent="UI"]
+layer = 3
+
+[node name="PanelContainer" parent="UI/Menu" instance=ExtResource("7_ft7wq")]
+offset_left = 93.0
+offset_top = 873.0
+offset_right = -1612.0
+offset_bottom = -30.0
+theme = ExtResource("12_ippxs")
 
 [node name="UIRoot" type="CanvasLayer" parent="UI"]
-script = ExtResource("4_ntbvo")
-all_recipes = ExtResource("5_y2t60")
+unique_name_in_owner = true
+layer = 4
 
-[node name="Tile Shift" type="Control" parent="UI/UIRoot"]
+[node name="InventoryDialog" parent="UI/UIRoot" instance=ExtResource("6_wvaue")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1148.0
+offset_top = 133.0
+offset_right = -28.0
+offset_bottom = 461.0
+size_flags_vertical = 8
+
+[node name="CookingDialog" parent="UI/UIRoot" instance=ExtResource("7_rrrlp")]
+unique_name_in_owner = true
+visible = false
+offset_left = 93.0
+offset_top = 118.0
+offset_right = -997.0
+offset_bottom = -118.0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+
+[node name="ResourceDialog" parent="UI/UIRoot" instance=ExtResource("15_p6n4j")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -754.0
+offset_top = -491.0
+offset_bottom = 492.0
+grow_horizontal = 0
+
+[node name="Blur" type="CanvasLayer" parent="UI"]
+
+[node name="Tile Shift" type="Control" parent="UI/Blur"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -146,7 +227,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/UIRoot/Tile Shift"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/Blur/Tile Shift"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,34 +235,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="UI/UIRoot/Tile Shift/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/Blur/Tile Shift/MarginContainer"]
 material = SubResource("ShaderMaterial_y4woi")
 layout_mode = 2
 texture = ExtResource("9_hkxwd")
-
-[node name="InventoryDialog" parent="UI/UIRoot" instance=ExtResource("6_wvaue")]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-offset_left = -41.5
-offset_top = -105.0
-offset_right = 41.5
-offset_bottom = -31.0
-grow_vertical = 0
-size_flags_vertical = 8
-
-[node name="CookingDialog" parent="UI/UIRoot" instance=ExtResource("7_rrrlp")]
-unique_name_in_owner = true
-visible = false
-offset_left = 203.0
-offset_top = 193.0
-offset_right = -203.0
-offset_bottom = -193.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
 
 [node name="UX" type="Control" parent="."]
 layout_mode = 3

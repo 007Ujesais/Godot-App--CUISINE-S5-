@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://dog3lbwdfpnj4"]
+
+[ext_resource type="Theme" uid="uid://dxhgocvbo582" path="res://assets/Themes/Cooking_dialog.tres" id="1_3a6f3"]
+[ext_resource type="Script" path="res://scripts/Interface/dialog/resource_dialog.gd" id="2_t2ery"]
+[ext_resource type="Resource" uid="uid://r80gpoqtd5vw" path="res://data/Resource groupe/all_resouce.tres" id="3_66snd"]
+[ext_resource type="Texture2D" uid="uid://fqnnkml4lphe" path="res://assets/Icons/SVG/cross_small.svg" id="4_6amha"]
+[ext_resource type="PackedScene" uid="uid://dl0dc2ub8svvk" path="res://scenes/Interface/item_grid.tscn" id="5_la6qo"]
+
+[node name="ResourceDialog" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0.392157)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3a6f3")
+script = ExtResource("2_t2ery")
+all_resouce = ExtResource("3_66snd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="closeButton" type="Button" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_icons/icon = ExtResource("4_6amha")
+action_mode = 0
+icon = ExtResource("4_6amha")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Resources
+"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+self_modulate = Color(0.909804, 0.937255, 0.945098, 1)
+layout_mode = 2
+
+[node name="ItemsContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer" instance=ExtResource("5_la6qo")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 735)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="CookingButton" type="Button" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Prepare"
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/closeButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/PanelContainer3/CookingButton" to="." method="_on_cooking_button_pressed"]
